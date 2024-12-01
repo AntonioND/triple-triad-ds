@@ -1,0 +1,625 @@
+PAGfx Converter, by Mollusk     www.palib.com
+If you have suggestions, problems, or anything, please mail me at mollusk@palib.info
+
+Converting PAGfx.ini
+Transparent Color : Magenta
+
+315 sprites :
+  chiffre : 256colors, 32x384, Pal : chiffre_Pal, -> chiffre_Sprite
+  c000g : 256colors, 64x64, Pal : c000g_Pal, -> c000g_Sprite
+  c001bg : 256colors, 64x64, Pal : c001bg_Pal, -> c001bg_Sprite
+  c001rg : 256colors, 64x64, Pal : c001rg_Pal, -> c001rg_Sprite
+  c002bg : 256colors, 64x64, Pal : c002bg_Pal, -> c002bg_Sprite
+  c002rg : 256colors, 64x64, Pal : c002rg_Pal, -> c002rg_Sprite
+  c003bg : 256colors, 64x64, Pal : c003bg_Pal, -> c003bg_Sprite
+  c003rg : 256colors, 64x64, Pal : c003rg_Pal, -> c003rg_Sprite
+  c004bg : 256colors, 64x64, Pal : c004bg_Pal, -> c004bg_Sprite
+  c004rg : 256colors, 64x64, Pal : c004rg_Pal, -> c004rg_Sprite
+  c005bg : 256colors, 64x64, Pal : c005bg_Pal, -> c005bg_Sprite
+  c005rg : 256colors, 64x64, Pal : c005rg_Pal, -> c005rg_Sprite
+  c006bg : 256colors, 64x64, Pal : c006bg_Pal, -> c006bg_Sprite
+  c006rg : 256colors, 64x64, Pal : c006rg_Pal, -> c006rg_Sprite
+  c007bg : 256colors, 64x64, Pal : c007bg_Pal, -> c007bg_Sprite
+  c007rg : 256colors, 64x64, Pal : c007rg_Pal, -> c007rg_Sprite
+  c008bg : 256colors, 64x64, Pal : c008bg_Pal, -> c008bg_Sprite
+  c008rg : 256colors, 64x64, Pal : c008rg_Pal, -> c008rg_Sprite
+  c009bg : 256colors, 64x64, Pal : c009bg_Pal, -> c009bg_Sprite
+  c009rg : 256colors, 64x64, Pal : c009rg_Pal, -> c009rg_Sprite
+  c010bg : 256colors, 64x64, Pal : c010bg_Pal, -> c010bg_Sprite
+  c010rg : 256colors, 64x64, Pal : c010rg_Pal, -> c010rg_Sprite
+  c011bg : 256colors, 64x64, Pal : c011bg_Pal, -> c011bg_Sprite
+  c011rg : 256colors, 64x64, Pal : c011rg_Pal, -> c011rg_Sprite
+  c012bg : 256colors, 64x64, Pal : c012bg_Pal, -> c012bg_Sprite
+  c012rg : 256colors, 64x64, Pal : c012rg_Pal, -> c012rg_Sprite
+  c013bg : 256colors, 64x64, Pal : c013bg_Pal, -> c013bg_Sprite
+  c013rg : 256colors, 64x64, Pal : c013rg_Pal, -> c013rg_Sprite
+  c014bg : 256colors, 64x64, Pal : c014bg_Pal, -> c014bg_Sprite
+  c014rg : 256colors, 64x64, Pal : c014rg_Pal, -> c014rg_Sprite
+  c015bg : 256colors, 64x64, Pal : c015bg_Pal, -> c015bg_Sprite
+  c015rg : 256colors, 64x64, Pal : c015rg_Pal, -> c015rg_Sprite
+  c016bg : 256colors, 64x64, Pal : c016bg_Pal, -> c016bg_Sprite
+  c016rg : 256colors, 64x64, Pal : c016rg_Pal, -> c016rg_Sprite
+  c017bg : 256colors, 64x64, Pal : c017bg_Pal, -> c017bg_Sprite
+  c017rg : 256colors, 64x64, Pal : c017rg_Pal, -> c017rg_Sprite
+  c018bg : 256colors, 64x64, Pal : c018bg_Pal, -> c018bg_Sprite
+  c018rg : 256colors, 64x64, Pal : c018rg_Pal, -> c018rg_Sprite
+  c019bg : 256colors, 64x64, Pal : c019bg_Pal, -> c019bg_Sprite
+  c019rg : 256colors, 64x64, Pal : c019rg_Pal, -> c019rg_Sprite
+  c020bg : 256colors, 64x64, Pal : c020bg_Pal, -> c020bg_Sprite
+  c020rg : 256colors, 64x64, Pal : c020rg_Pal, -> c020rg_Sprite
+  c021bg : 256colors, 64x64, Pal : c021bg_Pal, -> c021bg_Sprite
+  c021rg : 256colors, 64x64, Pal : c021rg_Pal, -> c021rg_Sprite
+  c022bg : 256colors, 64x64, Pal : c022bg_Pal, -> c022bg_Sprite
+  c022rg : 256colors, 64x64, Pal : c022rg_Pal, -> c022rg_Sprite
+  c023bg : 256colors, 64x64, Pal : c023bg_Pal, -> c023bg_Sprite
+  c023rg : 256colors, 64x64, Pal : c023rg_Pal, -> c023rg_Sprite
+  c024bg : 256colors, 64x64, Pal : c024bg_Pal, -> c024bg_Sprite
+  c024rg : 256colors, 64x64, Pal : c024rg_Pal, -> c024rg_Sprite
+  c025bg : 256colors, 64x64, Pal : c025bg_Pal, -> c025bg_Sprite
+  c025rg : 256colors, 64x64, Pal : c025rg_Pal, -> c025rg_Sprite
+  c026bg : 256colors, 64x64, Pal : c026bg_Pal, -> c026bg_Sprite
+  c026rg : 256colors, 64x64, Pal : c026rg_Pal, -> c026rg_Sprite
+  c027bg : 256colors, 64x64, Pal : c027bg_Pal, -> c027bg_Sprite
+  c027rg : 256colors, 64x64, Pal : c027rg_Pal, -> c027rg_Sprite
+  c028bg : 256colors, 64x64, Pal : c028bg_Pal, -> c028bg_Sprite
+  c028rg : 256colors, 64x64, Pal : c028rg_Pal, -> c028rg_Sprite
+  c029bg : 256colors, 64x64, Pal : c029bg_Pal, -> c029bg_Sprite
+  c029rg : 256colors, 64x64, Pal : c029rg_Pal, -> c029rg_Sprite
+  c030bg : 256colors, 64x64, Pal : c030bg_Pal, -> c030bg_Sprite
+  c030rg : 256colors, 64x64, Pal : c030rg_Pal, -> c030rg_Sprite
+  c031bg : 256colors, 64x64, Pal : c031bg_Pal, -> c031bg_Sprite
+  c031rg : 256colors, 64x64, Pal : c031rg_Pal, -> c031rg_Sprite
+  c032bg : 256colors, 64x64, Pal : c032bg_Pal, -> c032bg_Sprite
+  c032rg : 256colors, 64x64, Pal : c032rg_Pal, -> c032rg_Sprite
+  c033bg : 256colors, 64x64, Pal : c033bg_Pal, -> c033bg_Sprite
+  c033rg : 256colors, 64x64, Pal : c033rg_Pal, -> c033rg_Sprite
+  c034bg : 256colors, 64x64, Pal : c034bg_Pal, -> c034bg_Sprite
+  c034rg : 256colors, 64x64, Pal : c034rg_Pal, -> c034rg_Sprite
+  c035bg : 256colors, 64x64, Pal : c035bg_Pal, -> c035bg_Sprite
+  c035rg : 256colors, 64x64, Pal : c035rg_Pal, -> c035rg_Sprite
+  c036bg : 256colors, 64x64, Pal : c036bg_Pal, -> c036bg_Sprite
+  c036rg : 256colors, 64x64, Pal : c036rg_Pal, -> c036rg_Sprite
+  c037bg : 256colors, 64x64, Pal : c037bg_Pal, -> c037bg_Sprite
+  c037rg : 256colors, 64x64, Pal : c037rg_Pal, -> c037rg_Sprite
+  c038bg : 256colors, 64x64, Pal : c038bg_Pal, -> c038bg_Sprite
+  c038rg : 256colors, 64x64, Pal : c038rg_Pal, -> c038rg_Sprite
+  c039bg : 256colors, 64x64, Pal : c039bg_Pal, -> c039bg_Sprite
+  c039rg : 256colors, 64x64, Pal : c039rg_Pal, -> c039rg_Sprite
+  c040bg : 256colors, 64x64, Pal : c040bg_Pal, -> c040bg_Sprite
+  c040rg : 256colors, 64x64, Pal : c040rg_Pal, -> c040rg_Sprite
+  c041bg : 256colors, 64x64, Pal : c041bg_Pal, -> c041bg_Sprite
+  c041rg : 256colors, 64x64, Pal : c041rg_Pal, -> c041rg_Sprite
+  c042bg : 256colors, 64x64, Pal : c042bg_Pal, -> c042bg_Sprite
+  c042rg : 256colors, 64x64, Pal : c042rg_Pal, -> c042rg_Sprite
+  c043bg : 256colors, 64x64, Pal : c043bg_Pal, -> c043bg_Sprite
+  c043rg : 256colors, 64x64, Pal : c043rg_Pal, -> c043rg_Sprite
+  c044bg : 256colors, 64x64, Pal : c044bg_Pal, -> c044bg_Sprite
+  c044rg : 256colors, 64x64, Pal : c044rg_Pal, -> c044rg_Sprite
+  c045bg : 256colors, 64x64, Pal : c045bg_Pal, -> c045bg_Sprite
+  c045rg : 256colors, 64x64, Pal : c045rg_Pal, -> c045rg_Sprite
+  c046bg : 256colors, 64x64, Pal : c046bg_Pal, -> c046bg_Sprite
+  c046rg : 256colors, 64x64, Pal : c046rg_Pal, -> c046rg_Sprite
+  c047bg : 256colors, 64x64, Pal : c047bg_Pal, -> c047bg_Sprite
+  c047rg : 256colors, 64x64, Pal : c047rg_Pal, -> c047rg_Sprite
+  c048bg : 256colors, 64x64, Pal : c048bg_Pal, -> c048bg_Sprite
+  c048rg : 256colors, 64x64, Pal : c048rg_Pal, -> c048rg_Sprite
+  c049bg : 256colors, 64x64, Pal : c049bg_Pal, -> c049bg_Sprite
+  c049rg : 256colors, 64x64, Pal : c049rg_Pal, -> c049rg_Sprite
+  c050bg : 256colors, 64x64, Pal : c050bg_Pal, -> c050bg_Sprite
+  c050rg : 256colors, 64x64, Pal : c050rg_Pal, -> c050rg_Sprite
+  c051bg : 256colors, 64x64, Pal : c051bg_Pal, -> c051bg_Sprite
+  c051rg : 256colors, 64x64, Pal : c051rg_Pal, -> c051rg_Sprite
+  c052bg : 256colors, 64x64, Pal : c052bg_Pal, -> c052bg_Sprite
+  c052rg : 256colors, 64x64, Pal : c052rg_Pal, -> c052rg_Sprite
+  c053bg : 256colors, 64x64, Pal : c053bg_Pal, -> c053bg_Sprite
+  c053rg : 256colors, 64x64, Pal : c053rg_Pal, -> c053rg_Sprite
+  c054bg : 256colors, 64x64, Pal : c054bg_Pal, -> c054bg_Sprite
+  c054rg : 256colors, 64x64, Pal : c054rg_Pal, -> c054rg_Sprite
+  c055bg : 256colors, 64x64, Pal : c055bg_Pal, -> c055bg_Sprite
+  c055rg : 256colors, 64x64, Pal : c055rg_Pal, -> c055rg_Sprite
+  c056bg : 256colors, 64x64, Pal : c056bg_Pal, -> c056bg_Sprite
+  c056rg : 256colors, 64x64, Pal : c056rg_Pal, -> c056rg_Sprite
+  c057bg : 256colors, 64x64, Pal : c057bg_Pal, -> c057bg_Sprite
+  c057rg : 256colors, 64x64, Pal : c057rg_Pal, -> c057rg_Sprite
+  c058bg : 256colors, 64x64, Pal : c058bg_Pal, -> c058bg_Sprite
+  c058rg : 256colors, 64x64, Pal : c058rg_Pal, -> c058rg_Sprite
+  c059bg : 256colors, 64x64, Pal : c059bg_Pal, -> c059bg_Sprite
+  c059rg : 256colors, 64x64, Pal : c059rg_Pal, -> c059rg_Sprite
+  c060bg : 256colors, 64x64, Pal : c060bg_Pal, -> c060bg_Sprite
+  c060rg : 256colors, 64x64, Pal : c060rg_Pal, -> c060rg_Sprite
+  c061bg : 256colors, 64x64, Pal : c061bg_Pal, -> c061bg_Sprite
+  c061rg : 256colors, 64x64, Pal : c061rg_Pal, -> c061rg_Sprite
+  c062bg : 256colors, 64x64, Pal : c062bg_Pal, -> c062bg_Sprite
+  c062rg : 256colors, 64x64, Pal : c062rg_Pal, -> c062rg_Sprite
+  c063bg : 256colors, 64x64, Pal : c063bg_Pal, -> c063bg_Sprite
+  c063rg : 256colors, 64x64, Pal : c063rg_Pal, -> c063rg_Sprite
+  c064bg : 256colors, 64x64, Pal : c064bg_Pal, -> c064bg_Sprite
+  c064rg : 256colors, 64x64, Pal : c064rg_Pal, -> c064rg_Sprite
+  c065bg : 256colors, 64x64, Pal : c065bg_Pal, -> c065bg_Sprite
+  c065rg : 256colors, 64x64, Pal : c065rg_Pal, -> c065rg_Sprite
+  c066bg : 256colors, 64x64, Pal : c066bg_Pal, -> c066bg_Sprite
+  c066rg : 256colors, 64x64, Pal : c066rg_Pal, -> c066rg_Sprite
+  c067bg : 256colors, 64x64, Pal : c067bg_Pal, -> c067bg_Sprite
+  c067rg : 256colors, 64x64, Pal : c067rg_Pal, -> c067rg_Sprite
+  c068bg : 256colors, 64x64, Pal : c068bg_Pal, -> c068bg_Sprite
+  c068rg : 256colors, 64x64, Pal : c068rg_Pal, -> c068rg_Sprite
+  c069bg : 256colors, 64x64, Pal : c069bg_Pal, -> c069bg_Sprite
+  c069rg : 256colors, 64x64, Pal : c069rg_Pal, -> c069rg_Sprite
+  c070bg : 256colors, 64x64, Pal : c070bg_Pal, -> c070bg_Sprite
+  c070rg : 256colors, 64x64, Pal : c070rg_Pal, -> c070rg_Sprite
+  c071bg : 256colors, 64x64, Pal : c071bg_Pal, -> c071bg_Sprite
+  c071rg : 256colors, 64x64, Pal : c071rg_Pal, -> c071rg_Sprite
+  c072bg : 256colors, 64x64, Pal : c072bg_Pal, -> c072bg_Sprite
+  c072rg : 256colors, 64x64, Pal : c072rg_Pal, -> c072rg_Sprite
+  c073bg : 256colors, 64x64, Pal : c073bg_Pal, -> c073bg_Sprite
+  c073rg : 256colors, 64x64, Pal : c073rg_Pal, -> c073rg_Sprite
+  c074bg : 256colors, 64x64, Pal : c074bg_Pal, -> c074bg_Sprite
+  c074rg : 256colors, 64x64, Pal : c074rg_Pal, -> c074rg_Sprite
+  c075bg : 256colors, 64x64, Pal : c075bg_Pal, -> c075bg_Sprite
+  c075rg : 256colors, 64x64, Pal : c075rg_Pal, -> c075rg_Sprite
+  c076bg : 256colors, 64x64, Pal : c076bg_Pal, -> c076bg_Sprite
+  c076rg : 256colors, 64x64, Pal : c076rg_Pal, -> c076rg_Sprite
+  c077bg : 256colors, 64x64, Pal : c077bg_Pal, -> c077bg_Sprite
+  c077rg : 256colors, 64x64, Pal : c077rg_Pal, -> c077rg_Sprite
+  c078bg : 256colors, 64x64, Pal : c078bg_Pal, -> c078bg_Sprite
+  c078rg : 256colors, 64x64, Pal : c078rg_Pal, -> c078rg_Sprite
+  c079bg : 256colors, 64x64, Pal : c079bg_Pal, -> c079bg_Sprite
+  c079rg : 256colors, 64x64, Pal : c079rg_Pal, -> c079rg_Sprite
+  c080bg : 256colors, 64x64, Pal : c080bg_Pal, -> c080bg_Sprite
+  c080rg : 256colors, 64x64, Pal : c080rg_Pal, -> c080rg_Sprite
+  c081bg : 256colors, 64x64, Pal : c081bg_Pal, -> c081bg_Sprite
+  c081rg : 256colors, 64x64, Pal : c081rg_Pal, -> c081rg_Sprite
+  c082bg : 256colors, 64x64, Pal : c082bg_Pal, -> c082bg_Sprite
+  c082rg : 256colors, 64x64, Pal : c082rg_Pal, -> c082rg_Sprite
+  c083bg : 256colors, 64x64, Pal : c083bg_Pal, -> c083bg_Sprite
+  c083rg : 256colors, 64x64, Pal : c083rg_Pal, -> c083rg_Sprite
+  c084bg : 256colors, 64x64, Pal : c084bg_Pal, -> c084bg_Sprite
+  c084rg : 256colors, 64x64, Pal : c084rg_Pal, -> c084rg_Sprite
+  c085bg : 256colors, 64x64, Pal : c085bg_Pal, -> c085bg_Sprite
+  c085rg : 256colors, 64x64, Pal : c085rg_Pal, -> c085rg_Sprite
+  c086bg : 256colors, 64x64, Pal : c086bg_Pal, -> c086bg_Sprite
+  c086rg : 256colors, 64x64, Pal : c086rg_Pal, -> c086rg_Sprite
+  c087bg : 256colors, 64x64, Pal : c087bg_Pal, -> c087bg_Sprite
+  c087rg : 256colors, 64x64, Pal : c087rg_Pal, -> c087rg_Sprite
+  c088bg : 256colors, 64x64, Pal : c088bg_Pal, -> c088bg_Sprite
+  c088rg : 256colors, 64x64, Pal : c088rg_Pal, -> c088rg_Sprite
+  c089bg : 256colors, 64x64, Pal : c089bg_Pal, -> c089bg_Sprite
+  c089rg : 256colors, 64x64, Pal : c089rg_Pal, -> c089rg_Sprite
+  c090bg : 256colors, 64x64, Pal : c090bg_Pal, -> c090bg_Sprite
+  c090rg : 256colors, 64x64, Pal : c090rg_Pal, -> c090rg_Sprite
+  c091bg : 256colors, 64x64, Pal : c091bg_Pal, -> c091bg_Sprite
+  c091rg : 256colors, 64x64, Pal : c091rg_Pal, -> c091rg_Sprite
+  c092bg : 256colors, 64x64, Pal : c092bg_Pal, -> c092bg_Sprite
+  c092rg : 256colors, 64x64, Pal : c092rg_Pal, -> c092rg_Sprite
+  c093bg : 256colors, 64x64, Pal : c093bg_Pal, -> c093bg_Sprite
+  c093rg : 256colors, 64x64, Pal : c093rg_Pal, -> c093rg_Sprite
+  c094bg : 256colors, 64x64, Pal : c094bg_Pal, -> c094bg_Sprite
+  c094rg : 256colors, 64x64, Pal : c094rg_Pal, -> c094rg_Sprite
+  c095bg : 256colors, 64x64, Pal : c095bg_Pal, -> c095bg_Sprite
+  c095rg : 256colors, 64x64, Pal : c095rg_Pal, -> c095rg_Sprite
+  c096bg : 256colors, 64x64, Pal : c096bg_Pal, -> c096bg_Sprite
+  c096rg : 256colors, 64x64, Pal : c096rg_Pal, -> c096rg_Sprite
+  c097bg : 256colors, 64x64, Pal : c097bg_Pal, -> c097bg_Sprite
+  c097rg : 256colors, 64x64, Pal : c097rg_Pal, -> c097rg_Sprite
+  c098bg : 256colors, 64x64, Pal : c098bg_Pal, -> c098bg_Sprite
+  c098rg : 256colors, 64x64, Pal : c098rg_Pal, -> c098rg_Sprite
+  c099bg : 256colors, 64x64, Pal : c099bg_Pal, -> c099bg_Sprite
+  c099rg : 256colors, 64x64, Pal : c099rg_Pal, -> c099rg_Sprite
+  c100bg : 256colors, 64x64, Pal : c100bg_Pal, -> c100bg_Sprite
+  c100rg : 256colors, 64x64, Pal : c100rg_Pal, -> c100rg_Sprite
+  c101bg : 256colors, 64x64, Pal : c101bg_Pal, -> c101bg_Sprite
+  c101rg : 256colors, 64x64, Pal : c101rg_Pal, -> c101rg_Sprite
+  c102bg : 256colors, 64x64, Pal : c102bg_Pal, -> c102bg_Sprite
+  c102rg : 256colors, 64x64, Pal : c102rg_Pal, -> c102rg_Sprite
+  c103bg : 256colors, 64x64, Pal : c103bg_Pal, -> c103bg_Sprite
+  c103rg : 256colors, 64x64, Pal : c103rg_Pal, -> c103rg_Sprite
+  c104bg : 256colors, 64x64, Pal : c104bg_Pal, -> c104bg_Sprite
+  c104rg : 256colors, 64x64, Pal : c104rg_Pal, -> c104rg_Sprite
+  c105bg : 256colors, 64x64, Pal : c105bg_Pal, -> c105bg_Sprite
+  c105rg : 256colors, 64x64, Pal : c105rg_Pal, -> c105rg_Sprite
+  c106bg : 256colors, 64x64, Pal : c106bg_Pal, -> c106bg_Sprite
+  c106rg : 256colors, 64x64, Pal : c106rg_Pal, -> c106rg_Sprite
+  c107bg : 256colors, 64x64, Pal : c107bg_Pal, -> c107bg_Sprite
+  c107rg : 256colors, 64x64, Pal : c107rg_Pal, -> c107rg_Sprite
+  c108bg : 256colors, 64x64, Pal : c108bg_Pal, -> c108bg_Sprite
+  c108rg : 256colors, 64x64, Pal : c108rg_Pal, -> c108rg_Sprite
+  c109bg : 256colors, 64x64, Pal : c109bg_Pal, -> c109bg_Sprite
+  c109rg : 256colors, 64x64, Pal : c109rg_Pal, -> c109rg_Sprite
+  c110bg : 256colors, 64x64, Pal : c110bg_Pal, -> c110bg_Sprite
+  c110rg : 256colors, 64x64, Pal : c110rg_Pal, -> c110rg_Sprite
+  curseur : 16colors, 32x16, Pal : curseur_Pal, -> curseur_Sprite
+  flecheAventure : 16colors, 32x32, Pal : flecheAventure_Pal, -> flecheAventure_Sprite
+  persoc00 : 256colors, 64x64, Pal : persoc00_Pal, -> persoc00_Sprite
+  persoc01 : 256colors, 64x64, Pal : persoc01_Pal, -> persoc01_Sprite
+  persoc02 : 256colors, 64x64, Pal : persoc02_Pal, -> persoc02_Sprite
+  persoc02b : 256colors, 64x64, Pal : persoc02_Pal, -> persoc02b_Sprite
+  persoc03 : 256colors, 64x64, Pal : persoc03_Pal, -> persoc03_Sprite
+  persoc04 : 256colors, 64x64, Pal : persoc04_Pal, -> persoc04_Sprite
+  persoc05 : 256colors, 64x64, Pal : persoc05_Pal, -> persoc05_Sprite
+  persoc06 : 256colors, 64x64, Pal : persoc06_Pal, -> persoc06_Sprite
+  persoc07 : 256colors, 64x64, Pal : persoc07_Pal, -> persoc07_Sprite
+  persoc08 : 256colors, 64x64, Pal : persoc08_Pal, -> persoc08_Sprite
+  persoc09 : 256colors, 64x64, Pal : persoc09_Pal, -> persoc09_Sprite
+  persoc10 : 256colors, 64x64, Pal : persoc10_Pal, -> persoc10_Sprite
+  persoc11 : 256colors, 64x64, Pal : persoc11_Pal, -> persoc11_Sprite
+  persoc12 : 256colors, 64x64, Pal : persoc12_Pal, -> persoc12_Sprite
+  persoc13 : 256colors, 64x64, Pal : persoc13_Pal, -> persoc13_Sprite
+  persog000 : 256colors, 32x64, Pal : persog00_Pal, -> persog000_Sprite
+  persog010 : 256colors, 32x64, Pal : persog01_Pal, -> persog010_Sprite
+  persog020 : 256colors, 32x64, Pal : persog02_Pal, -> persog020_Sprite
+  persog030 : 256colors, 32x64, Pal : persog03_Pal, -> persog030_Sprite
+  persog040 : 256colors, 32x64, Pal : persog04_Pal, -> persog040_Sprite
+  persog050 : 256colors, 32x64, Pal : persog05_Pal, -> persog050_Sprite
+  persog060 : 256colors, 32x64, Pal : persog06_Pal, -> persog060_Sprite
+  persog070 : 256colors, 32x64, Pal : persog07_Pal, -> persog070_Sprite
+  persog080 : 256colors, 32x64, Pal : persog08_Pal, -> persog080_Sprite
+  persog090 : 256colors, 32x64, Pal : persog09_Pal, -> persog090_Sprite
+  persog100 : 256colors, 32x64, Pal : persog10_Pal, -> persog100_Sprite
+  persog110 : 256colors, 32x64, Pal : persog11_Pal, -> persog110_Sprite
+  persog120 : 256colors, 32x64, Pal : persog12_Pal, -> persog120_Sprite
+  persog130 : 256colors, 32x64, Pal : persog13_Pal, -> persog130_Sprite
+  persog140 : 256colors, 32x64, Pal : persog14_Pal, -> persog140_Sprite
+  persog001 : 256colors, 64x64, Pal : persog00_Pal, -> persog001_Sprite
+  persog011 : 256colors, 64x64, Pal : persog01_Pal, -> persog011_Sprite
+  persog021 : 256colors, 64x64, Pal : persog02_Pal, -> persog021_Sprite
+  persog031 : 256colors, 64x64, Pal : persog03_Pal, -> persog031_Sprite
+  persog041 : 256colors, 64x64, Pal : persog04_Pal, -> persog041_Sprite
+  persog051 : 256colors, 64x64, Pal : persog05_Pal, -> persog051_Sprite
+  persog061 : 256colors, 64x64, Pal : persog06_Pal, -> persog061_Sprite
+  persog071 : 256colors, 64x64, Pal : persog07_Pal, -> persog071_Sprite
+  persog081 : 256colors, 64x64, Pal : persog08_Pal, -> persog081_Sprite
+  persog091 : 256colors, 64x64, Pal : persog09_Pal, -> persog091_Sprite
+  persog101 : 256colors, 64x64, Pal : persog10_Pal, -> persog101_Sprite
+  persog111 : 256colors, 64x64, Pal : persog11_Pal, -> persog111_Sprite
+  persog121 : 256colors, 64x64, Pal : persog12_Pal, -> persog121_Sprite
+  persog131 : 256colors, 64x64, Pal : persog13_Pal, -> persog131_Sprite
+  persog141 : 256colors, 64x64, Pal : persog14_Pal, -> persog141_Sprite
+  persog002 : 256colors, 32x64, Pal : persog00_Pal, -> persog002_Sprite
+  persog012 : 256colors, 32x64, Pal : persog01_Pal, -> persog012_Sprite
+  persog022 : 256colors, 32x64, Pal : persog02_Pal, -> persog022_Sprite
+  persog032 : 256colors, 32x64, Pal : persog03_Pal, -> persog032_Sprite
+  persog042 : 256colors, 32x64, Pal : persog04_Pal, -> persog042_Sprite
+  persog052 : 256colors, 32x64, Pal : persog05_Pal, -> persog052_Sprite
+  persog062 : 256colors, 32x64, Pal : persog06_Pal, -> persog062_Sprite
+  persog072 : 256colors, 32x64, Pal : persog07_Pal, -> persog072_Sprite
+  persog082 : 256colors, 32x64, Pal : persog08_Pal, -> persog082_Sprite
+  persog092 : 256colors, 32x64, Pal : persog09_Pal, -> persog092_Sprite
+  persog102 : 256colors, 32x64, Pal : persog10_Pal, -> persog102_Sprite
+  persog112 : 256colors, 32x64, Pal : persog11_Pal, -> persog112_Sprite
+  persog122 : 256colors, 32x64, Pal : persog12_Pal, -> persog122_Sprite
+  persog132 : 256colors, 32x64, Pal : persog13_Pal, -> persog132_Sprite
+  persog142 : 256colors, 32x64, Pal : persog14_Pal, -> persog142_Sprite
+  persog003 : 256colors, 64x64, Pal : persog00_Pal, -> persog003_Sprite
+  persog013 : 256colors, 64x64, Pal : persog01_Pal, -> persog013_Sprite
+  persog023 : 256colors, 64x64, Pal : persog02_Pal, -> persog023_Sprite
+  persog033 : 256colors, 64x64, Pal : persog03_Pal, -> persog033_Sprite
+  persog043 : 256colors, 64x64, Pal : persog04_Pal, -> persog043_Sprite
+  persog053 : 256colors, 64x64, Pal : persog05_Pal, -> persog053_Sprite
+  persog063 : 256colors, 64x64, Pal : persog06_Pal, -> persog063_Sprite
+  persog073 : 256colors, 64x64, Pal : persog07_Pal, -> persog073_Sprite
+  persog083 : 256colors, 64x64, Pal : persog08_Pal, -> persog083_Sprite
+  persog093 : 256colors, 64x64, Pal : persog09_Pal, -> persog093_Sprite
+  persog103 : 256colors, 64x64, Pal : persog10_Pal, -> persog103_Sprite
+  persog113 : 256colors, 64x64, Pal : persog11_Pal, -> persog113_Sprite
+  persog123 : 256colors, 64x64, Pal : persog12_Pal, -> persog123_Sprite
+  persog133 : 256colors, 64x64, Pal : persog13_Pal, -> persog133_Sprite
+  persog143 : 256colors, 64x64, Pal : persog14_Pal, -> persog143_Sprite
+  fenetre0 : 256colors, 64x64, Pal : fenetre_Pal, -> fenetre0_Sprite
+  fenetre1 : 256colors, 64x64, Pal : fenetre_Pal, -> fenetre1_Sprite
+  hautFenetre : 16colors, 32x16, Pal : curseur_Pal, -> hautFenetre_Sprite
+  crayonGomme : 256colors, 32x128, Pal : crayonGomme_Pal, -> crayonGomme_Sprite
+  creditPalib00 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib00_Sprite
+  creditPalib01 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib01_Sprite
+  creditPalib02 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib02_Sprite
+  creditPalib03 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib03_Sprite
+  creditPalib10 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib10_Sprite
+  creditPalib11 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib11_Sprite
+  creditPalib12 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib12_Sprite
+  creditPalib13 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditPalib13_Sprite
+  creditSquare00 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditSquare00_Sprite
+  creditSquare01 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditSquare01_Sprite
+  creditSquare10 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditSquare10_Sprite
+  creditSquare11 : 16colors, 64x64, Pal : texteCredit_Pal, -> creditSquare11_Sprite
+
+1 backgrounds :
+  font : 16cFont, 512x128, Pal : font_Pal, 239 tiles -> font_Tiles and font_Map
+
+24 textures :
+  curseur3D : 16colors, 32x16, Pal : curseur3D_Pal, -> curseur3D_Texture
+  fleche : 4colors, 16x112, Pal : fleche_Pal, -> fleche_Texture
+  flecheMenu : 4colors, 8x32, Pal : flecheMenu_Pal, -> flecheMenu_Texture
+  fenetreListeCarte : 256colors, 128x256, Pal : fenetreListeCarte_Pal, -> fenetreListeCarte_Texture
+  hautListeCarte : 4colors, 128x60, Pal : hautListeCarte_Pal, -> hautListeCarte_Texture
+  fenetre3D : 256colors, 128x64, Pal : fenetre3D_Pal, -> fenetre3D_Texture
+  hautFenetre3D : 4colors, 128x12, Pal : hautListeCarte_Pal, -> hautFenetre3D_Texture
+  element1 : 256colors, 16x64, Pal : element_Pal, -> element1_Texture
+  element2 : 256colors, 16x64, Pal : element_Pal, -> element2_Texture
+  element3 : 256colors, 16x64, Pal : element_Pal, -> element3_Texture
+  element4 : 256colors, 16x64, Pal : element_Pal, -> element4_Texture
+  element5 : 256colors, 16x64, Pal : element_Pal, -> element5_Texture
+  element6 : 256colors, 16x64, Pal : element_Pal, -> element6_Texture
+  element7 : 256colors, 16x64, Pal : element_Pal, -> element7_Texture
+  element8 : 256colors, 16x64, Pal : element_Pal, -> element8_Texture
+  elementBg : 256colors, 128x128, Pal : elementBg_Pal, -> elementBg_Texture
+  bonusCarte : 4colors, 32x64, Pal : fleche_Pal, -> bonusCarte_Texture
+  regleAffiche0 : 256colors, 256x256, Pal : regleAffiche_Pal, -> regleAffiche0_Texture
+  regleAffiche1 : 256colors, 256x256, Pal : regleAffiche_Pal, -> regleAffiche1_Texture
+  carteBrille : 4colors, 64x512, Pal : fleche_Pal, -> carteBrille_Texture
+  persoMini : 256colors, 16x192, Pal : persoMini_Pal, -> persoMini_Texture
+  persoMiniBg : 256colors, 192x16, Pal : persoMiniBg_Pal, -> persoMiniBg_Texture
+  choixWifi0 : 16colors, 128x64, Pal : curseur3D_Pal, -> choixWifi0_Texture
+  choixWifi1 : 16colors, 128x64, Pal : curseur3D_Pal, -> choixWifi1_Texture
+
+268 palettes :
+  chiffre_Pal, 139 colors
+  c000g_Pal, 17 colors
+  c001bg_Pal, 242 colors
+  c001rg_Pal, 240 colors
+  c002bg_Pal, 251 colors
+  c002rg_Pal, 248 colors
+  c003bg_Pal, 239 colors
+  c003rg_Pal, 235 colors
+  c004bg_Pal, 243 colors
+  c004rg_Pal, 228 colors
+  c005bg_Pal, 250 colors
+  c005rg_Pal, 248 colors
+  c006bg_Pal, 238 colors
+  c006rg_Pal, 234 colors
+  c007bg_Pal, 238 colors
+  c007rg_Pal, 238 colors
+  c008bg_Pal, 246 colors
+  c008rg_Pal, 242 colors
+  c009bg_Pal, 245 colors
+  c009rg_Pal, 243 colors
+  c010bg_Pal, 250 colors
+  c010rg_Pal, 239 colors
+  c011bg_Pal, 247 colors
+  c011rg_Pal, 242 colors
+  c012bg_Pal, 242 colors
+  c012rg_Pal, 234 colors
+  c013bg_Pal, 243 colors
+  c013rg_Pal, 238 colors
+  c014bg_Pal, 242 colors
+  c014rg_Pal, 229 colors
+  c015bg_Pal, 247 colors
+  c015rg_Pal, 250 colors
+  c016bg_Pal, 249 colors
+  c016rg_Pal, 245 colors
+  c017bg_Pal, 242 colors
+  c017rg_Pal, 237 colors
+  c018bg_Pal, 241 colors
+  c018rg_Pal, 237 colors
+  c019bg_Pal, 231 colors
+  c019rg_Pal, 219 colors
+  c020bg_Pal, 241 colors
+  c020rg_Pal, 235 colors
+  c021bg_Pal, 246 colors
+  c021rg_Pal, 243 colors
+  c022bg_Pal, 242 colors
+  c022rg_Pal, 225 colors
+  c023bg_Pal, 245 colors
+  c023rg_Pal, 246 colors
+  c024bg_Pal, 249 colors
+  c024rg_Pal, 243 colors
+  c025bg_Pal, 246 colors
+  c025rg_Pal, 237 colors
+  c026bg_Pal, 244 colors
+  c026rg_Pal, 245 colors
+  c027bg_Pal, 245 colors
+  c027rg_Pal, 247 colors
+  c028bg_Pal, 246 colors
+  c028rg_Pal, 241 colors
+  c029bg_Pal, 243 colors
+  c029rg_Pal, 236 colors
+  c030bg_Pal, 242 colors
+  c030rg_Pal, 243 colors
+  c031bg_Pal, 246 colors
+  c031rg_Pal, 228 colors
+  c032bg_Pal, 247 colors
+  c032rg_Pal, 237 colors
+  c033bg_Pal, 245 colors
+  c033rg_Pal, 239 colors
+  c034bg_Pal, 249 colors
+  c034rg_Pal, 247 colors
+  c035bg_Pal, 244 colors
+  c035rg_Pal, 237 colors
+  c036bg_Pal, 247 colors
+  c036rg_Pal, 243 colors
+  c037bg_Pal, 241 colors
+  c037rg_Pal, 248 colors
+  c038bg_Pal, 247 colors
+  c038rg_Pal, 247 colors
+  c039bg_Pal, 251 colors
+  c039rg_Pal, 241 colors
+  c040bg_Pal, 251 colors
+  c040rg_Pal, 239 colors
+  c041bg_Pal, 255 colors
+  c041rg_Pal, 245 colors
+  c042bg_Pal, 254 colors
+  c042rg_Pal, 247 colors
+  c043bg_Pal, 241 colors
+  c043rg_Pal, 245 colors
+  c044bg_Pal, 245 colors
+  c044rg_Pal, 245 colors
+  c045bg_Pal, 234 colors
+  c045rg_Pal, 228 colors
+  c046bg_Pal, 237 colors
+  c046rg_Pal, 233 colors
+  c047bg_Pal, 249 colors
+  c047rg_Pal, 250 colors
+  c048bg_Pal, 234 colors
+  c048rg_Pal, 234 colors
+  c049bg_Pal, 247 colors
+  c049rg_Pal, 242 colors
+  c050bg_Pal, 249 colors
+  c050rg_Pal, 243 colors
+  c051bg_Pal, 246 colors
+  c051rg_Pal, 243 colors
+  c052bg_Pal, 246 colors
+  c052rg_Pal, 239 colors
+  c053bg_Pal, 243 colors
+  c053rg_Pal, 243 colors
+  c054bg_Pal, 242 colors
+  c054rg_Pal, 234 colors
+  c055bg_Pal, 242 colors
+  c055rg_Pal, 237 colors
+  c056bg_Pal, 247 colors
+  c056rg_Pal, 244 colors
+  c057bg_Pal, 242 colors
+  c057rg_Pal, 234 colors
+  c058bg_Pal, 231 colors
+  c058rg_Pal, 231 colors
+  c059bg_Pal, 235 colors
+  c059rg_Pal, 238 colors
+  c060bg_Pal, 229 colors
+  c060rg_Pal, 242 colors
+  c061bg_Pal, 238 colors
+  c061rg_Pal, 242 colors
+  c062bg_Pal, 239 colors
+  c062rg_Pal, 236 colors
+  c063bg_Pal, 243 colors
+  c063rg_Pal, 247 colors
+  c064bg_Pal, 239 colors
+  c064rg_Pal, 238 colors
+  c065bg_Pal, 241 colors
+  c065rg_Pal, 241 colors
+  c066bg_Pal, 234 colors
+  c066rg_Pal, 240 colors
+  c067bg_Pal, 228 colors
+  c067rg_Pal, 231 colors
+  c068bg_Pal, 239 colors
+  c068rg_Pal, 234 colors
+  c069bg_Pal, 239 colors
+  c069rg_Pal, 235 colors
+  c070bg_Pal, 232 colors
+  c070rg_Pal, 236 colors
+  c071bg_Pal, 236 colors
+  c071rg_Pal, 242 colors
+  c072bg_Pal, 244 colors
+  c072rg_Pal, 240 colors
+  c073bg_Pal, 236 colors
+  c073rg_Pal, 247 colors
+  c074bg_Pal, 231 colors
+  c074rg_Pal, 233 colors
+  c075bg_Pal, 237 colors
+  c075rg_Pal, 238 colors
+  c076bg_Pal, 233 colors
+  c076rg_Pal, 240 colors
+  c077bg_Pal, 243 colors
+  c077rg_Pal, 242 colors
+  c078bg_Pal, 235 colors
+  c078rg_Pal, 234 colors
+  c079bg_Pal, 239 colors
+  c079rg_Pal, 238 colors
+  c080bg_Pal, 246 colors
+  c080rg_Pal, 242 colors
+  c081bg_Pal, 240 colors
+  c081rg_Pal, 239 colors
+  c082bg_Pal, 242 colors
+  c082rg_Pal, 244 colors
+  c083bg_Pal, 248 colors
+  c083rg_Pal, 243 colors
+  c084bg_Pal, 249 colors
+  c084rg_Pal, 245 colors
+  c085bg_Pal, 246 colors
+  c085rg_Pal, 245 colors
+  c086bg_Pal, 249 colors
+  c086rg_Pal, 247 colors
+  c087bg_Pal, 247 colors
+  c087rg_Pal, 245 colors
+  c088bg_Pal, 245 colors
+  c088rg_Pal, 247 colors
+  c089bg_Pal, 253 colors
+  c089rg_Pal, 243 colors
+  c090bg_Pal, 243 colors
+  c090rg_Pal, 247 colors
+  c091bg_Pal, 251 colors
+  c091rg_Pal, 247 colors
+  c092bg_Pal, 250 colors
+  c092rg_Pal, 245 colors
+  c093bg_Pal, 245 colors
+  c093rg_Pal, 246 colors
+  c094bg_Pal, 242 colors
+  c094rg_Pal, 238 colors
+  c095bg_Pal, 244 colors
+  c095rg_Pal, 243 colors
+  c096bg_Pal, 249 colors
+  c096rg_Pal, 244 colors
+  c097bg_Pal, 243 colors
+  c097rg_Pal, 244 colors
+  c098bg_Pal, 248 colors
+  c098rg_Pal, 250 colors
+  c099bg_Pal, 249 colors
+  c099rg_Pal, 245 colors
+  c100bg_Pal, 250 colors
+  c100rg_Pal, 249 colors
+  c101bg_Pal, 248 colors
+  c101rg_Pal, 242 colors
+  c102bg_Pal, 248 colors
+  c102rg_Pal, 244 colors
+  c103bg_Pal, 251 colors
+  c103rg_Pal, 245 colors
+  c104bg_Pal, 247 colors
+  c104rg_Pal, 244 colors
+  c105bg_Pal, 245 colors
+  c105rg_Pal, 249 colors
+  c106bg_Pal, 254 colors
+  c106rg_Pal, 250 colors
+  c107bg_Pal, 243 colors
+  c107rg_Pal, 247 colors
+  c108bg_Pal, 248 colors
+  c108rg_Pal, 246 colors
+  c109bg_Pal, 250 colors
+  c109rg_Pal, 245 colors
+  c110bg_Pal, 252 colors
+  c110rg_Pal, 246 colors
+  curseur_Pal, 16 colors
+  flecheAventure_Pal, 16 colors
+  persoc00_Pal, 256 colors
+  persoc01_Pal, 253 colors
+  persoc02_Pal, 251 colors
+  persoc03_Pal, 254 colors
+  persoc04_Pal, 255 colors
+  persoc05_Pal, 253 colors
+  persoc06_Pal, 254 colors
+  persoc07_Pal, 256 colors
+  persoc08_Pal, 256 colors
+  persoc09_Pal, 253 colors
+  persoc10_Pal, 255 colors
+  persoc11_Pal, 255 colors
+  persoc12_Pal, 256 colors
+  persoc13_Pal, 111 colors
+  persog00_Pal, 255 colors
+  persog01_Pal, 253 colors
+  persog02_Pal, 252 colors
+  persog03_Pal, 253 colors
+  persog04_Pal, 253 colors
+  persog05_Pal, 255 colors
+  persog06_Pal, 251 colors
+  persog07_Pal, 252 colors
+  persog08_Pal, 250 colors
+  persog09_Pal, 253 colors
+  persog10_Pal, 253 colors
+  persog11_Pal, 256 colors
+  persog12_Pal, 247 colors
+  persog13_Pal, 254 colors
+  persog14_Pal, 253 colors
+  fenetre_Pal, 35 colors
+  crayonGomme_Pal, 253 colors
+  texteCredit_Pal, 16 colors
+  font_Pal, 2 colors
+  curseur3D_Pal, 16 colors
+  fleche_Pal, 4 colors
+  flecheMenu_Pal, 4 colors
+  fenetreListeCarte_Pal, 34 colors
+  hautListeCarte_Pal, 4 colors
+  fenetre3D_Pal, 35 colors
+  element_Pal, 243 colors
+  elementBg_Pal, 253 colors
+  regleAffiche_Pal, 129 colors
+  persoMini_Pal, 256 colors
+  persoMiniBg_Pal, 16 colors
+
+Converted in 0 minutes 1 seconds
+
+Finished !
