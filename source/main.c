@@ -1,11 +1,12 @@
 // Includes
-#include "as_lib9.h"
-#include <PA9.h>       // Include for PA_Lib
-#include "efs_lib.h"
 
+#include <PA9.h>       // Include for PA_Lib
+
+#if 0
 #include "MessageQueue.h"	// Includes for liblobby
 #include "802.11.h"
 #include "lobby.h"
+#endif
 
 #include "gfx/all_gfx.c"
 #include "gfx/all_gfx.h"
@@ -479,27 +480,11 @@ int getCaseY(int id) {
 	return -1;
 }
 
-extern int EFS_fscanf(EFS_FILE *file, const char *format, ...) {
-    int file_pos, tokens_read;
-    va_list arg;
- 
-    // seek to right position and scan data from buffer
-    fseek(nds_file, file->seek_pos, SEEK_SET);
-    file_pos = ftell(nds_file);
- 
-    va_start (arg, format);
-    tokens_read = vfscanf(nds_file, format, arg);
-    va_end (arg);
-    if ((tokens_read > 0) && (!feof(nds_file)))
-        file->seek_pos += ftell(nds_file) - file_pos;
-    return tokens_read;
-}
-
 bool sauvegarder() {   
 	if (sauvegarde) {
- 		EFS_FILE* fichier = NULL;
+ 		FILE* fichier = NULL;
  
-		fichier = EFS_fopen("TripleTriad.sav"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		fichier = fopen("fat:/TripleTriad.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
  
 		//Si l'ouverture a fonctionnée
 		if (fichier != NULL) {
@@ -530,8 +515,8 @@ bool sauvegarder() {
 			
 			
 			
-			EFS_fwrite(nombreFile,lengthSave,1,fichier);
-			EFS_fclose(fichier); // On ferme le fichier
+			fwrite(nombreFile,lengthSave,1,fichier);
+			fclose(fichier); // On ferme le fichier
 			return true;
 		}
 		// Si l'ouverture n'a pas fonctionné
@@ -594,8 +579,8 @@ void nouvelleSauv() {
 }
 
 bool charger() {	
-	EFS_FILE *fichier = NULL;
-	fichier = EFS_fopen("TripleTriad.sav"); //On ouvre le fichier
+	FILE *fichier = NULL;
+	fichier = fopen("fat:/TripleTriad.sav", "rb"); //On ouvre le fichier
 
 	//Si l'ouverture a fonctionnée
 	if (fichier != NULL)
@@ -604,7 +589,7 @@ bool charger() {
 
 		int temp=0;
 		
-		EFS_fscanf(fichier, "%01d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %01d %01d %01d %01d %01d %01d %01d %01d %02d %02d %02d ",
+		fscanf(fichier, "%01d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %01d %01d %01d %01d %01d %01d %01d %01d %02d %02d %02d ",
 					&temp,
 					&collection[1],&collection[2],&collection[3],&collection[4],&collection[5],&collection[6],&collection[7],&collection[8],&collection[9],&collection[10],&collection[11],&collection[12],&collection[13],&collection[14],&collection[15],&collection[16],&collection[17],&collection[18],&collection[19],&collection[20],&collection[21],&collection[22],&collection[23],&collection[24],&collection[25],&collection[26],&collection[27],&collection[28],&collection[29],&collection[30],&collection[31],&collection[32],&collection[33],&collection[34],&collection[35],&collection[36],&collection[37],&collection[38],&collection[39],&collection[40],&collection[41],&collection[42],&collection[43],&collection[44],&collection[45],&collection[46],&collection[47],&collection[48],&collection[49],&collection[50],&collection[51],&collection[52],&collection[53],&collection[54],&collection[55],&collection[56],&collection[57],&collection[58],&collection[59],&collection[60],&collection[61],&collection[62],&collection[63],&collection[64],&collection[65],&collection[66],&collection[67],&collection[68],&collection[69],&collection[70],&collection[71],&collection[72],&collection[73],&collection[74],&collection[75],&collection[76],&collection[77],&collection[78],&collection[79],&collection[80],&collection[81],&collection[82],&collection[83],&collection[84],&collection[85],&collection[86],&collection[87],&collection[88],&collection[89],&collection[90],&collection[91],&collection[92],&collection[93],&collection[94],&collection[95],&collection[96],&collection[97],&collection[98],&collection[99],&collection[100],&collection[101],&collection[102],&collection[103],&collection[104],&collection[105],&collection[106],&collection[107],&collection[108],&collection[109],&collection[110],
 					&historique[1],&historique[2],&historique[3],&historique[4],&historique[5],&historique[6],&historique[7],&historique[8],&historique[9],&historique[10],&historique[11],&historique[12],&historique[13],&historique[14],&historique[15],&historique[16],&historique[17],&historique[18],&historique[19],&historique[20],&historique[21],&historique[22],&historique[23],&historique[24],&historique[25],&historique[26],&historique[27],&historique[28],&historique[29],&historique[30],&historique[31],&historique[32],&historique[33],&historique[34],&historique[35],&historique[36],&historique[37],&historique[38],&historique[39],&historique[40],&historique[41],&historique[42],&historique[43],&historique[44],&historique[45],&historique[46],&historique[47],&historique[48],&historique[49],&historique[50],&historique[51],&historique[52],&historique[53],&historique[54],&historique[55],&historique[56],&historique[57],&historique[58],&historique[59],&historique[60],&historique[61],&historique[62],&historique[63],&historique[64],&historique[65],&historique[66],&historique[67],&historique[68],&historique[69],&historique[70],&historique[71],&historique[72],&historique[73],&historique[74],&historique[75],&historique[76],&historique[77],&historique[78],&historique[79],&historique[80],&historique[81],&historique[82],&historique[83],&historique[84],&historique[85],&historique[86],&historique[87],&historique[88],&historique[89],&historique[90],&historique[91],&historique[92],&historique[93],&historique[94],&historique[95],&historique[96],&historique[97],&historique[98],&historique[99],&historique[100],&historique[101],&historique[102],&historique[103],&historique[104],&historique[105],&historique[106],&historique[107],&historique[108],&historique[109],&historique[110],
@@ -625,7 +610,7 @@ bool charger() {
 					&persoDebloque,&dernierAdversaire,&choixPersoWifi
 		);
 		
-		EFS_fclose(fichier); //On ferme le fichier
+		fclose(fichier); //On ferme le fichier
 		
 		if (temp == 0) {
 			nouvelleSauv();
@@ -639,9 +624,9 @@ bool charger() {
 
 bool sauvegarderBitmap(int sauv) {
 	if (sauvegarde) {
- 		EFS_FILE* fichier = NULL;
+ 		FILE* fichier = NULL;
 		
-		fichier = EFS_fopen("BitmapWifi.sav"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		fichier = fopen("fat:/BitmapWifi.sav"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
 		
 		//Si l'ouverture a fonctionnée
 		if (fichier != NULL) {
@@ -704,8 +689,8 @@ bool sauvegarderBitmap(int sauv) {
 					bitmap[47][0],bitmap[47][1],bitmap[47][2],bitmap[47][3],bitmap[47][4],bitmap[47][5],bitmap[47][6],bitmap[47][7],bitmap[47][8],bitmap[47][9],bitmap[47][10],bitmap[47][11],bitmap[47][12],bitmap[47][13],bitmap[47][14],bitmap[47][15],bitmap[47][16],bitmap[47][17],bitmap[47][18],bitmap[47][19],bitmap[47][20],bitmap[47][21],bitmap[47][22],bitmap[47][23],bitmap[47][24],bitmap[47][25],bitmap[47][26],bitmap[47][27],bitmap[47][28],bitmap[47][29],bitmap[47][30],bitmap[47][31],bitmap[47][32],bitmap[47][33],bitmap[47][34],bitmap[47][35],bitmap[47][36],bitmap[47][37],bitmap[47][38],bitmap[47][39],bitmap[47][40],bitmap[47][41],bitmap[47][42],bitmap[47][43],bitmap[47][44],bitmap[47][45],bitmap[47][46],bitmap[47][47],bitmap[47][48],bitmap[47][49],bitmap[47][50],bitmap[47][51],bitmap[47][52],bitmap[47][53],bitmap[47][54],bitmap[47][55],bitmap[47][56],bitmap[47][57],bitmap[47][58],bitmap[47][59],bitmap[47][60],bitmap[47][61],bitmap[47][62],bitmap[47][63],bitmap[47][64],bitmap[47][65],bitmap[47][66],bitmap[47][67],bitmap[47][68],bitmap[47][69],bitmap[47][70],bitmap[47][71],bitmap[47][72],bitmap[47][73],bitmap[47][74],bitmap[47][75],bitmap[47][76],bitmap[47][77],bitmap[47][78],bitmap[47][79],bitmap[47][80],bitmap[47][81],bitmap[47][82],bitmap[47][83],bitmap[47][84],bitmap[47][85],bitmap[47][86],bitmap[47][87],bitmap[47][88],bitmap[47][89],bitmap[47][90],bitmap[47][91],bitmap[47][92],bitmap[47][93],bitmap[47][94],bitmap[47][95]
 			);*/
 			
-			EFS_fwrite(enregistrement,lengthSave,1,fichier);
-			EFS_fclose(fichier); // On ferme le fichier
+			fwrite(enregistrement,lengthSave,1,fichier);
+			fclose(fichier); // On ferme le fichier
 			return true;
 		}
 		// Si l'ouverture n'a pas fonctionné
@@ -715,8 +700,8 @@ bool sauvegarderBitmap(int sauv) {
 }
 
 bool chargerBitmap() {
-	EFS_FILE *fichier = NULL;
-	fichier = EFS_fopen("BitmapWifi.sav"); //On ouvre le fichier
+	FILE *fichier = NULL;
+	fichier = fopen("fat:/BitmapWifi.sav"); //On ouvre le fichier
 
 	//Si l'ouverture a fonctionnée
 	if (fichier != NULL)
@@ -724,13 +709,13 @@ bool chargerBitmap() {
 		//int nombreFile[653];
 		int temp;
 		
-		EFS_fscanf(fichier,"%01d %s ",&temp,&bitmap);
+		fscanf(fichier,"%01d %s ",&temp,&bitmap);
 		
-		/*EFS_fscanf(fichier, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s ",
+		/*fscanf(fichier, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s ",
 					&bitmap[0],&bitmap[1],&bitmap[2],&bitmap[3],&bitmap[4],&bitmap[5],&bitmap[6],&bitmap[7],&bitmap[8],&bitmap[9],&bitmap[10],&bitmap[11],&bitmap[12],&bitmap[13],&bitmap[14],&bitmap[15],&bitmap[16],&bitmap[17],&bitmap[18],&bitmap[19],&bitmap[20],&bitmap[21],&bitmap[22],&bitmap[23],&bitmap[24],&bitmap[25],&bitmap[26],&bitmap[27],&bitmap[28],&bitmap[29],&bitmap[30],&bitmap[31],&bitmap[32],&bitmap[33],&bitmap[34],&bitmap[35],&bitmap[36],&bitmap[37],&bitmap[38],&bitmap[39],&bitmap[40],&bitmap[41],&bitmap[42],&bitmap[43],&bitmap[44],&bitmap[45],&bitmap[46],&bitmap[47]
 		);*/
 		
-		/*EFS_fscanf(fichier, "%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c ",
+		/*fscanf(fichier, "%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c ",
 					&bitmap[0][0],&bitmap[0][1],&bitmap[0][2],&bitmap[0][3],&bitmap[0][4],&bitmap[0][5],&bitmap[0][6],&bitmap[0][7],&bitmap[0][8],&bitmap[0][9],&bitmap[0][10],&bitmap[0][11],&bitmap[0][12],&bitmap[0][13],&bitmap[0][14],&bitmap[0][15],&bitmap[0][16],&bitmap[0][17],&bitmap[0][18],&bitmap[0][19],&bitmap[0][20],&bitmap[0][21],&bitmap[0][22],&bitmap[0][23],&bitmap[0][24],&bitmap[0][25],&bitmap[0][26],&bitmap[0][27],&bitmap[0][28],&bitmap[0][29],&bitmap[0][30],&bitmap[0][31],&bitmap[0][32],&bitmap[0][33],&bitmap[0][34],&bitmap[0][35],&bitmap[0][36],&bitmap[0][37],&bitmap[0][38],&bitmap[0][39],&bitmap[0][40],&bitmap[0][41],&bitmap[0][42],&bitmap[0][43],&bitmap[0][44],&bitmap[0][45],&bitmap[0][46],&bitmap[0][47],&bitmap[0][48],&bitmap[0][49],&bitmap[0][50],&bitmap[0][51],&bitmap[0][52],&bitmap[0][53],&bitmap[0][54],&bitmap[0][55],&bitmap[0][56],&bitmap[0][57],&bitmap[0][58],&bitmap[0][59],&bitmap[0][60],&bitmap[0][61],&bitmap[0][62],&bitmap[0][63],&bitmap[0][64],&bitmap[0][65],&bitmap[0][66],&bitmap[0][67],&bitmap[0][68],&bitmap[0][69],&bitmap[0][70],&bitmap[0][71],&bitmap[0][72],&bitmap[0][73],&bitmap[0][74],&bitmap[0][75],&bitmap[0][76],&bitmap[0][77],&bitmap[0][78],&bitmap[0][79],&bitmap[0][80],&bitmap[0][81],&bitmap[0][82],&bitmap[0][83],&bitmap[0][84],&bitmap[0][85],&bitmap[0][86],&bitmap[0][87],&bitmap[0][88],&bitmap[0][89],&bitmap[0][90],&bitmap[0][91],&bitmap[0][92],&bitmap[0][93],&bitmap[0][94],&bitmap[0][95],
 					&bitmap[1][0],&bitmap[1][1],&bitmap[1][2],&bitmap[1][3],&bitmap[1][4],&bitmap[1][5],&bitmap[1][6],&bitmap[1][7],&bitmap[1][8],&bitmap[1][9],&bitmap[1][10],&bitmap[1][11],&bitmap[1][12],&bitmap[1][13],&bitmap[1][14],&bitmap[1][15],&bitmap[1][16],&bitmap[1][17],&bitmap[1][18],&bitmap[1][19],&bitmap[1][20],&bitmap[1][21],&bitmap[1][22],&bitmap[1][23],&bitmap[1][24],&bitmap[1][25],&bitmap[1][26],&bitmap[1][27],&bitmap[1][28],&bitmap[1][29],&bitmap[1][30],&bitmap[1][31],&bitmap[1][32],&bitmap[1][33],&bitmap[1][34],&bitmap[1][35],&bitmap[1][36],&bitmap[1][37],&bitmap[1][38],&bitmap[1][39],&bitmap[1][40],&bitmap[1][41],&bitmap[1][42],&bitmap[1][43],&bitmap[1][44],&bitmap[1][45],&bitmap[1][46],&bitmap[1][47],&bitmap[1][48],&bitmap[1][49],&bitmap[1][50],&bitmap[1][51],&bitmap[1][52],&bitmap[1][53],&bitmap[1][54],&bitmap[1][55],&bitmap[1][56],&bitmap[1][57],&bitmap[1][58],&bitmap[1][59],&bitmap[1][60],&bitmap[1][61],&bitmap[1][62],&bitmap[1][63],&bitmap[1][64],&bitmap[1][65],&bitmap[1][66],&bitmap[1][67],&bitmap[1][68],&bitmap[1][69],&bitmap[1][70],&bitmap[1][71],&bitmap[1][72],&bitmap[1][73],&bitmap[1][74],&bitmap[1][75],&bitmap[1][76],&bitmap[1][77],&bitmap[1][78],&bitmap[1][79],&bitmap[1][80],&bitmap[1][81],&bitmap[1][82],&bitmap[1][83],&bitmap[1][84],&bitmap[1][85],&bitmap[1][86],&bitmap[1][87],&bitmap[1][88],&bitmap[1][89],&bitmap[1][90],&bitmap[1][91],&bitmap[1][92],&bitmap[1][93],&bitmap[1][94],&bitmap[1][95],
 					&bitmap[2][0],&bitmap[2][1],&bitmap[2][2],&bitmap[2][3],&bitmap[2][4],&bitmap[2][5],&bitmap[2][6],&bitmap[2][7],&bitmap[2][8],&bitmap[2][9],&bitmap[2][10],&bitmap[2][11],&bitmap[2][12],&bitmap[2][13],&bitmap[2][14],&bitmap[2][15],&bitmap[2][16],&bitmap[2][17],&bitmap[2][18],&bitmap[2][19],&bitmap[2][20],&bitmap[2][21],&bitmap[2][22],&bitmap[2][23],&bitmap[2][24],&bitmap[2][25],&bitmap[2][26],&bitmap[2][27],&bitmap[2][28],&bitmap[2][29],&bitmap[2][30],&bitmap[2][31],&bitmap[2][32],&bitmap[2][33],&bitmap[2][34],&bitmap[2][35],&bitmap[2][36],&bitmap[2][37],&bitmap[2][38],&bitmap[2][39],&bitmap[2][40],&bitmap[2][41],&bitmap[2][42],&bitmap[2][43],&bitmap[2][44],&bitmap[2][45],&bitmap[2][46],&bitmap[2][47],&bitmap[2][48],&bitmap[2][49],&bitmap[2][50],&bitmap[2][51],&bitmap[2][52],&bitmap[2][53],&bitmap[2][54],&bitmap[2][55],&bitmap[2][56],&bitmap[2][57],&bitmap[2][58],&bitmap[2][59],&bitmap[2][60],&bitmap[2][61],&bitmap[2][62],&bitmap[2][63],&bitmap[2][64],&bitmap[2][65],&bitmap[2][66],&bitmap[2][67],&bitmap[2][68],&bitmap[2][69],&bitmap[2][70],&bitmap[2][71],&bitmap[2][72],&bitmap[2][73],&bitmap[2][74],&bitmap[2][75],&bitmap[2][76],&bitmap[2][77],&bitmap[2][78],&bitmap[2][79],&bitmap[2][80],&bitmap[2][81],&bitmap[2][82],&bitmap[2][83],&bitmap[2][84],&bitmap[2][85],&bitmap[2][86],&bitmap[2][87],&bitmap[2][88],&bitmap[2][89],&bitmap[2][90],&bitmap[2][91],&bitmap[2][92],&bitmap[2][93],&bitmap[2][94],&bitmap[2][95],
@@ -781,7 +766,7 @@ bool chargerBitmap() {
 					&bitmap[47][0],&bitmap[47][1],&bitmap[47][2],&bitmap[47][3],&bitmap[47][4],&bitmap[47][5],&bitmap[47][6],&bitmap[47][7],&bitmap[47][8],&bitmap[47][9],&bitmap[47][10],&bitmap[47][11],&bitmap[47][12],&bitmap[47][13],&bitmap[47][14],&bitmap[47][15],&bitmap[47][16],&bitmap[47][17],&bitmap[47][18],&bitmap[47][19],&bitmap[47][20],&bitmap[47][21],&bitmap[47][22],&bitmap[47][23],&bitmap[47][24],&bitmap[47][25],&bitmap[47][26],&bitmap[47][27],&bitmap[47][28],&bitmap[47][29],&bitmap[47][30],&bitmap[47][31],&bitmap[47][32],&bitmap[47][33],&bitmap[47][34],&bitmap[47][35],&bitmap[47][36],&bitmap[47][37],&bitmap[47][38],&bitmap[47][39],&bitmap[47][40],&bitmap[47][41],&bitmap[47][42],&bitmap[47][43],&bitmap[47][44],&bitmap[47][45],&bitmap[47][46],&bitmap[47][47],&bitmap[47][48],&bitmap[47][49],&bitmap[47][50],&bitmap[47][51],&bitmap[47][52],&bitmap[47][53],&bitmap[47][54],&bitmap[47][55],&bitmap[47][56],&bitmap[47][57],&bitmap[47][58],&bitmap[47][59],&bitmap[47][60],&bitmap[47][61],&bitmap[47][62],&bitmap[47][63],&bitmap[47][64],&bitmap[47][65],&bitmap[47][66],&bitmap[47][67],&bitmap[47][68],&bitmap[47][69],&bitmap[47][70],&bitmap[47][71],&bitmap[47][72],&bitmap[47][73],&bitmap[47][74],&bitmap[47][75],&bitmap[47][76],&bitmap[47][77],&bitmap[47][78],&bitmap[47][79],&bitmap[47][80],&bitmap[47][81],&bitmap[47][82],&bitmap[47][83],&bitmap[47][84],&bitmap[47][85],&bitmap[47][86],&bitmap[47][87],&bitmap[47][88],&bitmap[47][89],&bitmap[47][90],&bitmap[47][91],&bitmap[47][92],&bitmap[47][93],&bitmap[47][94],&bitmap[47][95]
 		);*/
 		
-		EFS_fclose(fichier); //On ferme le fichier
+		fclose(fichier); //On ferme le fichier
 		
 		return (temp == 1);
 	}
@@ -928,7 +913,7 @@ void EFS_LoadCadre(int sprite,int numero,int x,int y) {
 void playMusic(const char* nom) {
 	int essais=0;
 	bool chargement;
-	EFS_FILE* file;
+	FILE* file;
 	
 	sprintf(id_music,"%s",nom);
 	
@@ -936,7 +921,7 @@ void playMusic(const char* nom) {
 	sprintf(filename,"/bgm/%s.mp3",nom);
 	
 	do {
-		file= EFS_fopen (filename);
+		file= fopen (filename, "rb");
 		essais++;
 		if (essais == 10) {
 			return;
@@ -951,15 +936,15 @@ void playMusic(const char* nom) {
 		chargement = (musique_buffer = (u8*)malloc(fileSize)) ? true : false;
 		essais++;
 		if (essais == 10) {
-			EFS_fclose(file);
+			fclose(file);
 			free(musique_buffer);
 			return;
 		}
 	}
 	while (!chargement);
 	
-	EFS_fread(musique_buffer, 1, fileSize, file);
-	EFS_fclose(file);
+	fread(musique_buffer, 1, fileSize, file);
+	fclose(file);
 	
 	AS_MP3DirectPlay(musique_buffer,fileSize);
 	
@@ -979,11 +964,11 @@ void loadBg(int ecran,const char* nom,bool langue) {
 		sprintf(filenameTex,"/bg/%s_Bitmap.bin",nom);
 	}
 	
-	EFS_FILE* fileTex; 
-	fileTex= EFS_fopen (filenameTex);
+	FILE* fileTex; 
+	fileTex= fopen (filenameTex, "rb");
 	bgBitmap[ecran] = (char*)malloc(EFS_GetFileSize(fileTex));
-	EFS_fread(bgBitmap[ecran], 1, EFS_GetFileSize(fileTex), fileTex);
-	EFS_fclose(fileTex);
+	fread(bgBitmap[ecran], 1, EFS_GetFileSize(fileTex), fileTex);
+	fclose(fileTex);
 	
 	PA_WaitForVBL();
 	
@@ -998,20 +983,20 @@ void loadCarteMem(int sprite,int taille,int couleur,int numero) {
 		
 		char filenameTex[256];
 		sprintf ( filenameTex, "/texture/c%03d%01d1_Texture.bin",numero,couleur);
-		EFS_FILE* fileTex; 
-		fileTex= EFS_fopen (filenameTex);
+		FILE* fileTex; 
+		fileTex= fopen (filenameTex, "rb");
 		carteG3D_tex = (char*)malloc(EFS_GetFileSize(fileTex));
-		EFS_fread(carteG3D_tex, 1, EFS_GetFileSize(fileTex), fileTex);
-		EFS_fclose(fileTex);
+		fread(carteG3D_tex, 1, EFS_GetFileSize(fileTex), fileTex);
+		fclose(fileTex);
 			
 		char filenamePal[256];
 		char * palette;
 		sprintf ( filenamePal, "/texture/c%03d%01d1_Pal.bin",numero,couleur);
-		EFS_FILE* filePal; 
-		filePal= EFS_fopen (filenamePal);
+		FILE* filePal; 
+		filePal= fopen (filenamePal, "rb");
 		palette = (char*)malloc(EFS_GetFileSize(filePal));
-		EFS_fread(palette, 1, EFS_GetFileSize(filePal), filePal);
-		EFS_fclose(filePal);
+		fread(palette, 1, EFS_GetFileSize(filePal), filePal);
+		fclose(filePal);
 		
 		PA_WaitForVBL();
 		PA_3DProcess();
@@ -1029,20 +1014,20 @@ void loadCarteMem(int sprite,int taille,int couleur,int numero) {
 			char filenameTex[256];
 			sprintf ( filenameTex, "/texture/c%03d%01d0_Texture.bin",numero,i);
 		 
-			EFS_FILE* fileTex; 
-			fileTex= EFS_fopen (filenameTex);
+			FILE* fileTex; 
+			fileTex= fopen (filenameTex, "rb");
 			carte_gfx[i][sprite] = (char*)malloc(EFS_GetFileSize(fileTex));
-			EFS_fread(carte_gfx[i][sprite], 1, EFS_GetFileSize(fileTex), fileTex);
-			EFS_fclose(fileTex);
+			fread(carte_gfx[i][sprite], 1, EFS_GetFileSize(fileTex), fileTex);
+			fclose(fileTex);
 			
 			char filenamePal[256];
 			sprintf ( filenamePal, "/texture/c%03d%01d0_Pal.bin",numero,i);
 		 
-			EFS_FILE* filePal; 
-			filePal= EFS_fopen (filenamePal);
+			FILE* filePal; 
+			filePal= fopen (filenamePal, "rb");
 			carte_pal[i][sprite] = (char*)malloc(EFS_GetFileSize(filePal));
-			EFS_fread(carte_pal[i][sprite], 1, EFS_GetFileSize(filePal), filePal);
-			EFS_fclose(filePal);
+			fread(carte_pal[i][sprite], 1, EFS_GetFileSize(filePal), filePal);
+			fclose(filePal);
 			
 			PA_WaitForVBL();
 			PA_3DProcess();
@@ -1072,10 +1057,6 @@ void loadCarte3D(bool create,int sprite,int taille,int couleur,int ref,int x,int
 	}
 }
 
-void EFS_frewind(EFS_FILE *file) {
-    EFS_fseek(file, 0, SEEK_SET);
-}
-
 /*void EFS_PlaySound(const char* name,int num) {
 	char filename[256];
 	sprintf ( filename, "/sound/%s.raw", name);
@@ -1084,7 +1065,7 @@ void EFS_frewind(EFS_FILE *file) {
 	u32 rawSize;
 	EFS_fseek (rawFile , 0 , SEEK_END);
 	rawSize =  EFS_ftell (rawFile);
-	EFS_frewind (rawFile);
+	rewind (rawFile);
  
 	// allocate memory to store the raw file
 	//char * rawBuffer;
@@ -2560,7 +2541,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 					choixAdversaire = positionCurseur+11*page;
 					// Si le perso est débloquer...
 					if (choixAdversaire != persoAdvWifi) {
-						AS_SoundDefaultPlay((void*)choix,15984,127,64,0,0);
+						AS_SoundDefaultPlay((void*)choix_raw,15984,127,64,0,0);
 						sprintf(affichage,"%s\n%s ?",message[lang][21],nomAdv[lang][choixAdversaire]);
 						if (afficherFenetre3D(1,affichage)) {
 							choixPersoWifi = positionCurseur+11*page;
@@ -2571,7 +2552,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 						PA_3DSetSpriteXY(10,58,37+12*positionCurseur);
 					}
 					else {
-						AS_SoundDefaultPlay((void*)erreur,43404,127,64,0,0);
+						AS_SoundDefaultPlay((void*)erreur_raw,43404,127,64,0,0);
 					}
 				}
 			}
@@ -7961,7 +7942,7 @@ int main(int argc, char ** argv) {
 	PA_InitVBL(); // Initializes a standard VBL
 	
 	fatInitDefault();
-	EFS_Init();
+	nitfoFSInit();
 	
 	PA_VBLFunctionInit(MyVBLFunction);
 	IPC_Init();
