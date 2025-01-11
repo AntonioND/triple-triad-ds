@@ -7969,15 +7969,6 @@ int main(int argc, char ** argv) {
 	PA_Init();    // Initializes PA_Lib
 	PA_InitVBL(); // Initializes a standard VBL
 
-	fatInitDefault();
-
-	if (!nitroFSInit(NULL)) {
-		consoleDemoInit();
-		perror("nitroFSInit()");
-		while (1)
-			swiWaitForVBlank();
-	}
-
 #if 0
 	PA_VBLFunctionInit(MyVBLFunction);
 	IPC_Init();
@@ -8020,12 +8011,27 @@ int main(int argc, char ** argv) {
 	PA_CreateSprite(0,0,(void*)curseur_Sprite,OBJ_SIZE_32X16,0,0,256,192);
 	PA_SetSpritePrio(0,0,0);
 	
-	if (!charger()) {
+	if (!fatInitDefault()) {
 		sauvegarde = false;
 		nouvelleSauv();
-	
-		afficherFenetre(0,message[lang][65]);
+
+		afficherFenetre(0,"FAT init error. Save data won't be created.");
+	} else {
+		if (!charger()) {
+			sauvegarde = false;
+			nouvelleSauv();
+
+			afficherFenetre(0,message[lang][65]);
+		}
 	}
+
+	if (!nitroFSInit(NULL)) {
+		while (1) {
+			afficherFenetre(0,"NitroFS init error. Use a loader with DLDI and argv support.");
+			PA_WaitForVBL();
+		}
+	}
+
 	PA_SetBrightness(0,-31);
 	
 	majHistorique();
@@ -8081,6 +8087,8 @@ int main(int argc, char ** argv) {
 					break;
 					
 					case 1:
+					afficherFenetre(0,"WiFi mode not supported in this version of the game.");
+#if 0
 					if (getNombreCarte(1,1,10) > 4) {
 						AS_SoundDefaultPlay((void*)ouvrir,171340,127,64,0,0);
 						fadeBlack(1,true,true,false,0);
@@ -8092,6 +8100,7 @@ int main(int argc, char ** argv) {
 						AS_SoundDefaultPlay((void*)erreur,43404,127,64,0,0);
 						afficherFenetre(0,message[lang][52]);
 					}
+#endif
 					break;
 					
 					case 2:
