@@ -65,11 +65,11 @@ const unsigned char * carteG_Sprite[2][111] = {
 	{c000g_Sprite,c001bg_Sprite,c002bg_Sprite,c003bg_Sprite,c004bg_Sprite,c005bg_Sprite,c006bg_Sprite,c007bg_Sprite,c008bg_Sprite,c009bg_Sprite,c010bg_Sprite,c011bg_Sprite,c012bg_Sprite,c013bg_Sprite,c014bg_Sprite,c015bg_Sprite,c016bg_Sprite,c017bg_Sprite,c018bg_Sprite,c019bg_Sprite,c020bg_Sprite,c021bg_Sprite,c022bg_Sprite,c023bg_Sprite,c024bg_Sprite,c025bg_Sprite,c026bg_Sprite,c027bg_Sprite,c028bg_Sprite,c029bg_Sprite,c030bg_Sprite,c031bg_Sprite,c032bg_Sprite,c033bg_Sprite,c034bg_Sprite,c035bg_Sprite,c036bg_Sprite,c037bg_Sprite,c038bg_Sprite,c039bg_Sprite,c040bg_Sprite,c041bg_Sprite,c042bg_Sprite,c043bg_Sprite,c044bg_Sprite,c045bg_Sprite,c046bg_Sprite,c047bg_Sprite,c048bg_Sprite,c049bg_Sprite,c050bg_Sprite,c051bg_Sprite,c052bg_Sprite,c053bg_Sprite,c054bg_Sprite,c055bg_Sprite,c056bg_Sprite,c057bg_Sprite,c058bg_Sprite,c059bg_Sprite,c060bg_Sprite,c061bg_Sprite,c062bg_Sprite,c063bg_Sprite,c064bg_Sprite,c065bg_Sprite,c066bg_Sprite,c067bg_Sprite,c068bg_Sprite,c069bg_Sprite,c070bg_Sprite,c071bg_Sprite,c072bg_Sprite,c073bg_Sprite,c074bg_Sprite,c075bg_Sprite,c076bg_Sprite,c077bg_Sprite,c078bg_Sprite,c079bg_Sprite,c080bg_Sprite,c081bg_Sprite,c082bg_Sprite,c083bg_Sprite,c084bg_Sprite,c085bg_Sprite,c086bg_Sprite,c087bg_Sprite,c088bg_Sprite,c089bg_Sprite,c090bg_Sprite,c091bg_Sprite,c092bg_Sprite,c093bg_Sprite,c094bg_Sprite,c095bg_Sprite,c096bg_Sprite,c097bg_Sprite,c098bg_Sprite,c099bg_Sprite,c100bg_Sprite,c101bg_Sprite,c102bg_Sprite,c103bg_Sprite,c104bg_Sprite,c105bg_Sprite,c106bg_Sprite,c107bg_Sprite,c108bg_Sprite,c109bg_Sprite,c110bg_Sprite}
 };
 
-const unsigned char * cadre_Pal[14] = {persoc00_Pal,persoc01_Pal,persoc02_Pal,persoc03_Pal,persoc04_Pal,persoc05_Pal,persoc06_Pal,persoc07_Pal,persoc08_Pal,persoc09_Pal,persoc10_Pal,persoc11_Pal,persoc12_Pal,persoc13_Pal};
+const unsigned char * cadre_Pal[14] = {(const unsigned char *)persoc00_Pal,(const unsigned char *)persoc01_Pal,(const unsigned char *)persoc02_Pal,(const unsigned char *)persoc03_Pal,(const unsigned char *)persoc04_Pal,(const unsigned char *)persoc05_Pal,(const unsigned char *)persoc06_Pal,(const unsigned char *)persoc07_Pal,(const unsigned char *)persoc08_Pal,(const unsigned char *)persoc09_Pal,(const unsigned char *)persoc10_Pal,(const unsigned char *)persoc11_Pal,(const unsigned char *)persoc12_Pal,(const unsigned char *)persoc13_Pal};
 
 const unsigned char * cadre_Sprite[14] = {persoc00_Sprite,persoc01_Sprite,persoc02_Sprite,persoc03_Sprite,persoc04_Sprite,persoc05_Sprite,persoc06_Sprite,persoc07_Sprite,persoc08_Sprite,persoc09_Sprite,persoc10_Sprite,persoc11_Sprite,persoc12_Sprite,persoc13_Sprite};
 
-const unsigned char * perso_Pal[15] = {persog00_Pal,persog01_Pal,persog02_Pal,persog03_Pal,persog04_Pal,persog05_Pal,persog06_Pal,persog07_Pal,persog08_Pal,persog09_Pal,persog10_Pal,persog11_Pal,persog12_Pal,persog13_Pal,persog14_Pal};
+const unsigned char * perso_Pal[15] = {(const unsigned char *)persog00_Pal,(const unsigned char *)persog01_Pal,(const unsigned char *)persog02_Pal,(const unsigned char *)persog03_Pal,(const unsigned char *)persog04_Pal,(const unsigned char *)persog05_Pal,(const unsigned char *)persog06_Pal,(const unsigned char *)persog07_Pal,(const unsigned char *)persog08_Pal,(const unsigned char *)persog09_Pal,(const unsigned char *)persog10_Pal,(const unsigned char *)persog11_Pal,(const unsigned char *)persog12_Pal,(const unsigned char *)persog13_Pal,(const unsigned char *)persog14_Pal};
 
 const unsigned char * perso_Sprite[15][4] = {{persog000_Sprite,persog001_Sprite,persog002_Sprite,persog003_Sprite},{persog010_Sprite,persog011_Sprite,persog012_Sprite,persog013_Sprite},{persog020_Sprite,persog021_Sprite,persog022_Sprite,persog023_Sprite},{persog030_Sprite,persog031_Sprite,persog032_Sprite,persog033_Sprite},{persog040_Sprite,persog041_Sprite,persog042_Sprite,persog043_Sprite},{persog050_Sprite,persog051_Sprite,persog052_Sprite,persog053_Sprite},{persog060_Sprite,persog061_Sprite,persog062_Sprite,persog063_Sprite},{persog070_Sprite,persog071_Sprite,persog072_Sprite,persog073_Sprite},{persog080_Sprite,persog081_Sprite,persog082_Sprite,persog083_Sprite},{persog090_Sprite,persog091_Sprite,persog092_Sprite,persog093_Sprite},{persog100_Sprite,persog101_Sprite,persog102_Sprite,persog103_Sprite},{persog110_Sprite,persog111_Sprite,persog112_Sprite,persog113_Sprite},{persog120_Sprite,persog121_Sprite,persog122_Sprite,persog123_Sprite},{persog130_Sprite,persog131_Sprite,persog132_Sprite,persog133_Sprite},{persog140_Sprite,persog141_Sprite,persog142_Sprite,persog143_Sprite}};
 
@@ -423,7 +423,18 @@ s16 carteG3D_gfx;
 s16 carteG_gfx;
 s16 brille_gfx;
 
-extern FILE *nds_file;// on pointe vers le fichier
+size_t EFS_GetFileSize(FILE *file)
+{
+    long old_cursor = ftell(file);
+
+    fseek(file, 0, SEEK_END);
+
+    long size = ftell(file);
+
+    fseek(file, old_cursor, SEEK_SET);
+
+    return size;
+}
 
 bool cartePriseExiste() {
 	int i,j;
@@ -626,7 +637,7 @@ bool sauvegarderBitmap(int sauv) {
 	if (sauvegarde) {
  		FILE* fichier = NULL;
 		
-		fichier = fopen("fat:/BitmapWifi.sav"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		fichier = fopen("fat:/BitmapWifi.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
 		
 		//Si l'ouverture a fonctionnée
 		if (fichier != NULL) {
@@ -701,7 +712,7 @@ bool sauvegarderBitmap(int sauv) {
 
 bool chargerBitmap() {
 	FILE *fichier = NULL;
-	fichier = fopen("fat:/BitmapWifi.sav"); //On ouvre le fichier
+	fichier = fopen("fat:/BitmapWifi.sav", "rb"); //On ouvre le fichier
 
 	//Si l'ouverture a fonctionnée
 	if (fichier != NULL)
@@ -966,7 +977,7 @@ void loadBg(int ecran,const char* nom,bool langue) {
 	
 	FILE* fileTex; 
 	fileTex= fopen (filenameTex, "rb");
-	bgBitmap[ecran] = (char*)malloc(EFS_GetFileSize(fileTex));
+	bgBitmap[ecran] = malloc(EFS_GetFileSize(fileTex));
 	fread(bgBitmap[ecran], 1, EFS_GetFileSize(fileTex), fileTex);
 	fclose(fileTex);
 	
@@ -1170,6 +1181,7 @@ void afficherStatus(int couleur,char * texte) {
 }
 
 void envoiWifi(bool attente,unsigned short canal,unsigned char *data,int length) {
+#if 0
 	LOBBY_SendToRoom(LOBBY_GetRoomByID(ROOMID_MYROOM),canal,data,length);
 	do {
 		PA_3DProcess();
@@ -1177,6 +1189,7 @@ void envoiWifi(bool attente,unsigned short canal,unsigned char *data,int length)
 		afficherCarteAdv();
 	}
 	while (attente && !LOBBY_UserIsAllSent(LOBBY_GetRoomUserBySlot(LOBBY_GetRoomByID(ROOMID_MYROOM),(wifiOn==1 ? 1 : 0))));
+#endif
 }
 
 void attenteWifi() {
@@ -2541,7 +2554,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 					choixAdversaire = positionCurseur+11*page;
 					// Si le perso est débloquer...
 					if (choixAdversaire != persoAdvWifi) {
-						AS_SoundDefaultPlay((void*)choix_raw,15984,127,64,0,0);
+						AS_SoundDefaultPlay((void*)choix,15984,127,64,0,0);
 						sprintf(affichage,"%s\n%s ?",message[lang][21],nomAdv[lang][choixAdversaire]);
 						if (afficherFenetre3D(1,affichage)) {
 							choixPersoWifi = positionCurseur+11*page;
@@ -2552,7 +2565,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 						PA_3DSetSpriteXY(10,58,37+12*positionCurseur);
 					}
 					else {
-						AS_SoundDefaultPlay((void*)erreur_raw,43404,127,64,0,0);
+						AS_SoundDefaultPlay((void*)erreur,43404,127,64,0,0);
 					}
 				}
 			}
@@ -5190,8 +5203,10 @@ void initChoixCarte() {
 				if (wifiOn) {		// Si on est en multijoueur
 					char envoi[6];
 					sprintf(envoi,"%d ",carteDispo[positionCurseur+11*page][0]);
+#if 0
 					envoiWifi(false,0x0007,envoi,3);
 					IPC_WaitForAllSent();
+#endif
 				}
 				carte++;
 			}
@@ -5208,10 +5223,12 @@ void initChoixCarte() {
 			enleverCarte[carte] = true;
 			majListe = true;
 			AS_SoundDefaultPlay((void*)annuler,8596,127,64,0,0);
+#if 0
 			if (wifiOn) {		// Si on est en multijoueur
 				envoiWifi(false,0x0007,"",1);
 				IPC_WaitForAllSent();
 			}
+#endif
 		}
 		if (Stylus.Newpress || Stylus.Held) {
 			for (i=0;i<11;i++) {
@@ -5261,10 +5278,12 @@ void initChoixCarte() {
 				enleverCarte[carte] = true;
 				majListe = true;
 				AS_SoundDefaultPlay((void*)annuler,8596,127,64,0,0);
+#if 0
 				if (wifiOn) {		// Si on est en multijoueur
 					envoiWifi(false,0x0007,"",1);
 					IPC_WaitForAllSent();
 				}
+#endif
 			}
 			else if (((PA_StylusInZone(68,28,182,160) && (page < nombrePage)) || (PA_StylusInZone(68,28,182,40+12*((nombreCartes-1)%11)))) && (!enleverCarte[carte] || (carte == 5))) { // && ((((nombreCartes-1)%11) > i-1) || (page < nombrePage)) && (!enleverCarte[carte] || (carte == 5))) {
 				if (cinqCartes) {
@@ -5278,12 +5297,14 @@ void initChoixCarte() {
 					ajouterCarte[carte] = true;
 					majListe = true;
 					AS_SoundDefaultPlay((void*)bruitCarte,8576,127,64,0,0);
+#if 0
 					if (wifiOn) {		// Si on est en multijoueur
 						char envoi[6];
 						sprintf(envoi,"%d ",carteDispo[positionCurseur+11*page][0]);
 						envoiWifi(false,0x0007,envoi,3);
-						//IPC_WaitForAllSent();
+						IPC_WaitForAllSent();
 					}
+#endif
 					carte++;
 				}
 				else {
@@ -5651,13 +5672,13 @@ void initPartieSolo(int adversaire) {
 			rot += 512;
 			rotationFleche++;
 		}
-		PA_3DSetSpriteRotate(11,rot);
+		PA_3DSetSpriteRotateZ(11,rot);
 		
 		PA_CheckLid();
 		PA_3DProcess();
 		PA_WaitForVBL();
 	}
-	PA_3DSetSpriteRotate(11,384-256*tourJoueur);
+	PA_3DSetSpriteRotateZ(11,384-256*tourJoueur);
 	
 	// On attend une demie seconde...
 	for (i=0;i<30;i++) {
@@ -5667,7 +5688,7 @@ void initPartieSolo(int adversaire) {
 	}
 	
 	// Et on affiche la flèche où il faut
-	PA_3DSetSpriteRotate(11,0);
+	PA_3DSetSpriteRotateZ(11,0);
 	
 	int xFlecheInit = 128;
 	int yFlecheInit = 89;
@@ -5856,12 +5877,12 @@ void initPartieWifi(bool leader) {
 			rot += 512;
 			rotationFleche++;
 		}
-		PA_3DSetSpriteRotate(11,rot);
+		PA_3DSetSpriteRotateZ(11,rot);
 		
 		PA_3DProcess();
 		PA_WaitForVBL();
 	}
-	PA_3DSetSpriteRotate(11,384-256*tourWifi);
+	PA_3DSetSpriteRotateZ(11,384-256*tourWifi);
 	
 	// On attend une demie seconde...
 	for (i=0;i<30;i++) {
@@ -5870,7 +5891,7 @@ void initPartieWifi(bool leader) {
 	}
 	
 	// Et on affiche la flèche où il faut
-	PA_3DSetSpriteRotate(11,0);
+	PA_3DSetSpriteRotateZ(11,0);
 	
 	int xFlecheInit = 128;
 	int yFlecheInit = 89;
@@ -6196,6 +6217,7 @@ void initJeuWifi(bool leader,int * reglePartieWifi) {
 }
 
 bool initWifiCreer(u16 fenetre_gfx) {
+#if 0
 	int i,j;
 	int retour=0;
 	bool returnVal=true;
@@ -6364,10 +6386,11 @@ bool initWifiCreer(u16 fenetre_gfx) {
 	PA_WaitForVBL();
 	
 	return returnVal;
+#endif
 }
 
 bool initWifiRejoindre(u16 fenetre_gfx) {
-	
+#if 0
 	int i,j;
 	int positionCurseur=0;
 	int nombreRoomAffiche=0;
@@ -6600,6 +6623,7 @@ bool initWifiRejoindre(u16 fenetre_gfx) {
 	PA_3DProcess();
 	PA_WaitForVBL();
 	
+#endif
 	return true;
 }
 
@@ -7764,21 +7788,24 @@ void initCollection() {
 }
 
 void MyVBLFunction() {
+#if 0
 	if (wifiActive) {
 		IPC_RcvCompleteCheck();
 		LOBBY_Update();
 	}
+#endif
 	if (AS_GetMP3Status() == MP3ST_DECODE_ERROR) {
 		AS_MP3Stop();
 		playMusic(id_music);
 	}
 	
-	//AS_SoundVBL();
+	AS_SoundVBL();
 	/*if (musique && !IPC_Sound->chan[0].busy) {
 		EFS_PlayBgm(numeroMusique,1);
 	}*/
 }
 
+#if 0
 void ReceptionConfirm(unsigned char *data, int length, LPLOBBY_USER from) {
 	if (wifiActive) {
 		if (length == 555) {		// On quitte ! Cette option passe par dessus toute les autres
@@ -7935,15 +7962,23 @@ void ReceptionElements(unsigned char *data, int length, LPLOBBY_USER from) {
 		}
 	}
 }
+#endif
 
 // Function: main()
 int main(int argc, char ** argv) {
 	PA_Init();    // Initializes PA_Lib
 	PA_InitVBL(); // Initializes a standard VBL
-	
+
 	fatInitDefault();
-	nitfoFSInit();
-	
+
+	if (!nitroFSInit(NULL)) {
+		consoleDemoInit();
+		perror("nitroFSInit()");
+		while (1)
+			swiWaitForVBlank();
+	}
+
+#if 0
 	PA_VBLFunctionInit(MyVBLFunction);
 	IPC_Init();
 	IPC_SetChannelCallback(0, &LWIFI_IPC_Callback);
@@ -7957,9 +7992,11 @@ int main(int argc, char ** argv) {
 	LOBBY_SetStreamHandler(0x0008, &ReceptionDemandeBitmap);
 	LOBBY_SetStreamHandler(0x0009, &ReceptionEnvoiBitmap);
 	LOBBY_SetStreamHandler(0x0010, &ReceptionElements);
-	
+#endif
+
 	//PA_InitASLibForSounds(AS_MODE_SURROUND | AS_MODE_16CH);
-	PA_InitASLibForMP3(AS_MODE_MP3 | AS_MODE_SURROUND | AS_MODE_16CH);
+	AS_Init(AS_MODE_MP3 | AS_MODE_SURROUND | AS_MODE_16CH);
+	//PA_InitASLibForMP3(AS_MODE_MP3 | AS_MODE_SURROUND | AS_MODE_16CH);
 	PA_VBLFunctionInit(MyVBLFunction);
 	AS_SetDefaultSettings(AS_PCM_16BIT, 44100, AS_NO_DELAY);
 	AS_SetMP3Volume(127);

@@ -18,7 +18,7 @@ GAME_SUBTITLE	:= Final Fantasy VIII
 GAME_AUTHOR	:=
 GAME_ICON	:= logo.bmp
 
-ARM7ELF		:= $(BLOCKSDSEXT)/palib/sys/arm7_maxmod_dswifi.elf
+ARM7ELF		:= $(BLOCKSDSEXT)/palib/sys/arm7_mp3.elf
 
 # DLDI and internal SD slot of DSi
 # --------------------------------
@@ -36,7 +36,7 @@ INCLUDEDIRS	:=
 GFXDIRS		:=
 BINDIRS		:= data
 AUDIODIRS	:=
-NITROFSDIR	:=
+NITROFSDIR	:= nitroroot
 
 # Defines passed to all files
 # ---------------------------
@@ -46,11 +46,10 @@ DEFINES		:= -DPA_NO_DEPRECATION
 # Libraries
 # ---------
 
-LIBS		:= -lmm9 -lnds9 -ldswifi9 -lpa9
-LIBDIRS		:= $(BLOCKSDS)/libs/maxmod \
-		   $(BLOCKSDS)/libs/dswifi \
-		   $(BLOCKSDS)/libs/libnds \
-		   $(BLOCKSDSEXT)/palib
+LIBS		:= -lnds9d -lpa9 -ldswifi9
+LIBDIRS		:= $(BLOCKSDS)/libs/libnds \
+			   $(BLOCKSDS)/libs/dswifi \
+			   $(BLOCKSDSEXT)/palib
 
 # Build artifacts
 # ---------------
