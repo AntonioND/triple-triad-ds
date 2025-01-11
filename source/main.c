@@ -989,8 +989,10 @@ void loadBg(int ecran,const char* nom,bool langue) {
 	
 	FILE* fileTex; 
 	fileTex= fopen (filenameTex, "rb");
-	bgBitmap[ecran] = malloc(EFS_GetFileSize(fileTex));
-	fread(bgBitmap[ecran], 1, EFS_GetFileSize(fileTex), fileTex);
+	sassert(fileTex, filenameTex);
+	size_t size = EFS_GetFileSize(fileTex);
+	bgBitmap[ecran] = malloc(size);
+	fread(bgBitmap[ecran], 1, size, fileTex);
 	fclose(fileTex);
 	
 	PA_WaitForVBL();
@@ -1008,17 +1010,22 @@ void loadCarteMem(int sprite,int taille,int couleur,int numero) {
 		sprintf ( filenameTex, "/texture/c%03d%01d1_Texture.bin",numero,couleur);
 		FILE* fileTex; 
 		fileTex= fopen (filenameTex, "rb");
-		carteG3D_tex = (char*)malloc(EFS_GetFileSize(fileTex));
-		fread(carteG3D_tex, 1, EFS_GetFileSize(fileTex), fileTex);
+		sassert(fileTex, filenameTex);
+		size_t size = EFS_GetFileSize(fileTex);
+		carteG3D_tex = (char*)malloc(size);
+		fread(carteG3D_tex, 1, size, fileTex);
 		fclose(fileTex);
+
 			
 		char filenamePal[256];
 		char * palette;
 		sprintf ( filenamePal, "/texture/c%03d%01d1_Pal.bin",numero,couleur);
 		FILE* filePal; 
 		filePal= fopen (filenamePal, "rb");
-		palette = (char*)malloc(EFS_GetFileSize(filePal));
-		fread(palette, 1, EFS_GetFileSize(filePal), filePal);
+		sassert(filePal, filenamePal);
+		size = EFS_GetFileSize(filePal);
+		palette = (char*)malloc(size);
+		fread(palette, 1, size, filePal);
 		fclose(filePal);
 		
 		PA_WaitForVBL();
@@ -1039,8 +1046,10 @@ void loadCarteMem(int sprite,int taille,int couleur,int numero) {
 		 
 			FILE* fileTex; 
 			fileTex= fopen (filenameTex, "rb");
-			carte_gfx[i][sprite] = (char*)malloc(EFS_GetFileSize(fileTex));
-			fread(carte_gfx[i][sprite], 1, EFS_GetFileSize(fileTex), fileTex);
+			sassert(fileTex, filenameTex);
+			size_t size = EFS_GetFileSize(fileTex);
+			carte_gfx[i][sprite] = (char*)malloc(size);
+			fread(carte_gfx[i][sprite], 1, size, fileTex);
 			fclose(fileTex);
 			
 			char filenamePal[256];
@@ -1048,8 +1057,10 @@ void loadCarteMem(int sprite,int taille,int couleur,int numero) {
 		 
 			FILE* filePal; 
 			filePal= fopen (filenamePal, "rb");
-			carte_pal[i][sprite] = (char*)malloc(EFS_GetFileSize(filePal));
-			fread(carte_pal[i][sprite], 1, EFS_GetFileSize(filePal), filePal);
+			sassert(filePal, filenamePal);
+			size = EFS_GetFileSize(filePal);
+			carte_pal[i][sprite] = (char*)malloc(size);
+			fread(carte_pal[i][sprite], 1, size, filePal);
 			fclose(filePal);
 			
 			PA_WaitForVBL();
