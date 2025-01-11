@@ -502,7 +502,7 @@ bool sauvegarder() {
 		
 			int lengthSave = 1659;
 		
-			char nombreFile[lengthSave];
+			char nombreFile[lengthSave + 1];
 			
 			sprintf(nombreFile, "1 %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %03d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %01d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %04d %01d %01d %01d %01d %01d %01d %01d %01d %02d %02d %02d ",
 						collection[1],collection[2],collection[3],collection[4],collection[5],collection[6],collection[7],collection[8],collection[9],collection[10],collection[11],collection[12],collection[13],collection[14],collection[15],collection[16],collection[17],collection[18],collection[19],collection[20],collection[21],collection[22],collection[23],collection[24],collection[25],collection[26],collection[27],collection[28],collection[29],collection[30],collection[31],collection[32],collection[33],collection[34],collection[35],collection[36],collection[37],collection[38],collection[39],collection[40],collection[41],collection[42],collection[43],collection[44],collection[45],collection[46],collection[47],collection[48],collection[49],collection[50],collection[51],collection[52],collection[53],collection[54],collection[55],collection[56],collection[57],collection[58],collection[59],collection[60],collection[61],collection[62],collection[63],collection[64],collection[65],collection[66],collection[67],collection[68],collection[69],collection[70],collection[71],collection[72],collection[73],collection[74],collection[75],collection[76],collection[77],collection[78],collection[79],collection[80],collection[81],collection[82],collection[83],collection[84],collection[85],collection[86],collection[87],collection[88],collection[89],collection[90],collection[91],collection[92],collection[93],collection[94],collection[95],collection[96],collection[97],collection[98],collection[99],collection[100],collection[101],collection[102],collection[103],collection[104],collection[105],collection[106],collection[107],collection[108],collection[109],collection[110],
@@ -643,8 +643,8 @@ bool sauvegarderBitmap(int sauv) {
 		if (fichier != NULL) {
 			
 			int lengthSave = 4611;
-			char enregistrement[lengthSave];
-			sprintf(enregistrement,"%01d %s ",sauv,bitmap);
+			char enregistrement[lengthSave + 1];
+			sprintf(enregistrement,"%01d %s ",sauv,(char *)bitmap);
 			/*sprintf(enregistrement, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s ",
 					bitmap[0],bitmap[1],bitmap[2],bitmap[3],bitmap[4],bitmap[5],bitmap[6],bitmap[7],bitmap[8],bitmap[9],bitmap[10],bitmap[11],bitmap[12],bitmap[13],bitmap[14],bitmap[15],bitmap[16],bitmap[17],bitmap[18],bitmap[19],bitmap[20],bitmap[21],bitmap[22],bitmap[23],bitmap[24],bitmap[25],bitmap[26],bitmap[27],bitmap[28],bitmap[29],bitmap[30],bitmap[31],bitmap[32],bitmap[33],bitmap[34],bitmap[35],bitmap[36],bitmap[37],bitmap[38],bitmap[39],bitmap[40],bitmap[41],bitmap[42],bitmap[43],bitmap[44],bitmap[45],bitmap[46],bitmap[47]
 			);*/
@@ -720,7 +720,7 @@ bool chargerBitmap() {
 		//int nombreFile[653];
 		int temp;
 		
-		fscanf(fichier,"%01d %s ",&temp,&bitmap);
+		fscanf(fichier,"%01d %s ",&temp,(char *)&bitmap);
 		
 		/*fscanf(fichier, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s ",
 					&bitmap[0],&bitmap[1],&bitmap[2],&bitmap[3],&bitmap[4],&bitmap[5],&bitmap[6],&bitmap[7],&bitmap[8],&bitmap[9],&bitmap[10],&bitmap[11],&bitmap[12],&bitmap[13],&bitmap[14],&bitmap[15],&bitmap[16],&bitmap[17],&bitmap[18],&bitmap[19],&bitmap[20],&bitmap[21],&bitmap[22],&bitmap[23],&bitmap[24],&bitmap[25],&bitmap[26],&bitmap[27],&bitmap[28],&bitmap[29],&bitmap[30],&bitmap[31],&bitmap[32],&bitmap[33],&bitmap[34],&bitmap[35],&bitmap[36],&bitmap[37],&bitmap[38],&bitmap[39],&bitmap[40],&bitmap[41],&bitmap[42],&bitmap[43],&bitmap[44],&bitmap[45],&bitmap[46],&bitmap[47]
@@ -1174,13 +1174,13 @@ void afficherCarteAdv() {
 	}
 }
 
-void afficherStatus(int couleur,char * texte) {
+void afficherStatus(int couleur,const char * texte) {
 	PA_16cTextAlign(ALIGN_CENTER);
 	PA_16cClearZone(0,0,174,256,192);
 	PA_16cText(0,0,178,256,192,texte,couleur,5,strlen(texte));
 }
 
-void envoiWifi(bool attente,unsigned short canal,unsigned char *data,int length) {
+void envoiWifi(bool attente,unsigned short canal,const unsigned char *data,int length) {
 #if 0
 	LOBBY_SendToRoom(LOBBY_GetRoomByID(ROOMID_MYROOM),canal,data,length);
 	do {
@@ -1196,7 +1196,7 @@ void attenteWifi() {
 
 	int timerOut=0;
 	etape++;
-	envoiWifi(true,0x0005,"",etape);
+	envoiWifi(true,0x0005,(const unsigned char *)"",etape);
 	
 	for (timerOut=0;timerOut<6;timerOut++) {
 		PA_3DProcess();
@@ -1207,7 +1207,7 @@ void attenteWifi() {
 	while (etapeWifi != etape) {
 		timerOut++;
 		if (timerOut == 60) {		// On attend une seconde et on demande l'étape de l'autre DS
-			envoiWifi(true,0x0005,"",555);
+			envoiWifi(true,0x0005,(const unsigned char *)"",555);
 			timerOut = 0;
 		}
 		
@@ -1460,7 +1460,7 @@ void progressionWifi(int pourcent) {
 	PA_16cClearZone(0,162,42,210,58);
 	if (pourcent != -1) {
 		int i,j;
-		char affiche[4];
+		char affiche[15];
 		PA_16cTextAlign(ALIGN_CENTER);
 		sprintf(affiche,"%d%c",pourcent*100/48,'%');
 		PA_16cText(0,162,42,210,58,affiche,1,5,4);
@@ -1692,7 +1692,7 @@ void majListeReglesWifi() {
 	PA_16cText(0,70,136,184,172,message[lang][16],1,5,16);
 }
 
-int majRegles(int * regles) {
+int majRegles(const int * regles) {
 	// On affiche l'écran du haut...
 	int i=0;
 	int ligne = 1;
@@ -2287,7 +2287,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 	majListePersoWifi(page,persoAdvWifi);
 	
 	if (envoyerPerso) {
-		envoiWifi(false,0x0003,"",positionCurseur+11*page);
+		envoiWifi(false,0x0003,(const unsigned char *)"",positionCurseur+11*page);
 	}
 	
 	while (1) {
@@ -2417,7 +2417,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 			AS_SoundDefaultPlay((void*)choix,15984,127,64,0,0);
 			
 			if (envoyerPerso) {
-				envoiWifi(false,0x0003,"",positionCurseur+11*page);
+				envoiWifi(false,0x0003,(const unsigned char *)"",positionCurseur+11*page);
 			}
 			
 			timer = 0;
@@ -2439,7 +2439,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 				effacementPerso = true;
 				
 				if (envoyerPerso) {
-					envoiWifi(false,0x0003,"",positionCurseur+11*page);
+					envoiWifi(false,0x0003,(const unsigned char *)"",positionCurseur+11*page);
 				}
 			}
 			else {
@@ -2459,7 +2459,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 				AS_SoundDefaultPlay((void*)choix,15984,127,64,0,0);
 				
 				if (envoyerPerso) {
-					envoiWifi(false,0x0003,"",positionCurseur+11*page);
+					envoiWifi(false,0x0003,(const unsigned char *)"",positionCurseur+11*page);
 				}
 					
 				afficherPageSuivante = ajoutPage;
@@ -2506,7 +2506,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 					PA_3DSetSpriteY(10,37+12*positionCurseur);
 					
 					if (envoyerPerso) {
-						envoiWifi(false,0x0003,"",positionCurseur+11*page);
+						envoiWifi(false,0x0003,(const unsigned char *)"",positionCurseur+11*page);
 					}
 					
 					effacementPerso = true;
@@ -2522,7 +2522,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 					}
 					
 					if (envoyerPerso) {
-						envoiWifi(false,0x0003,"",positionCurseur+11*page);
+						envoiWifi(false,0x0003,(const unsigned char *)"",positionCurseur+11*page);
 					}
 					
 					afficherPageSuivante = -1;
@@ -2536,7 +2536,7 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 					}
 					
 					if (envoyerPerso) {
-						envoiWifi(false,0x0003,"",positionCurseur+11*page);
+						envoiWifi(false,0x0003,(const unsigned char *)"",positionCurseur+11*page);
 					}
 					
 					afficherPageSuivante = 1;
@@ -2642,10 +2642,10 @@ bool initChoixPersoWifi(bool changerPerso,bool envoyerPerso,u16 fenetre_gfx) {
 	}
 	
 	if (envoyerPerso && retour) {
-		envoiWifi(true,0x0003,"",choixPersoWifi);
+		envoiWifi(true,0x0003,(const unsigned char *)"",choixPersoWifi);
 		PA_3DProcess();
 		PA_WaitForVBL();PA_WaitForVBL();PA_WaitForVBL();PA_WaitForVBL();PA_WaitForVBL();PA_WaitForVBL();
-		envoiWifi(true,0x0003,"",15);
+		envoiWifi(true,0x0003,(const unsigned char *)"",15);
 	}
 	
 	if (choixPersoWifi == 14) {
@@ -2755,9 +2755,9 @@ bool initChoixReglesWifi(bool envoyerRegles) {
 					}
 					majRegles(reglePerso);
 					if (envoyerRegles) {
-						char envoi[8];
+						char envoi[10];
 						sprintf(envoi,"%01d%01d%01d%01d%01d%01d%01d%01d",reglePerso[0],reglePerso[1],reglePerso[2],reglePerso[3],reglePerso[4],reglePerso[5],reglePerso[6],reglePerso[7]);
-						envoiWifi(false,0x0010,envoi,8);
+						envoiWifi(false,0x0010,(const unsigned char *)envoi,8);
 					}
 				}
 				majListeReglesWifi();
@@ -2771,9 +2771,9 @@ bool initChoixReglesWifi(bool envoyerRegles) {
 						reglePerso[i] = regleWifi[i];
 					}
 					majRegles(reglePerso);
-					char envoi[8];
+					char envoi[10];
 					sprintf(envoi,"%01d%01d%01d%01d%01d%01d%01d%01d",reglePerso[0],reglePerso[1],reglePerso[2],reglePerso[3],reglePerso[4],reglePerso[5],reglePerso[6],reglePerso[7]);
-					envoiWifi(false,0x0010,envoi,8);
+					envoiWifi(false,0x0010,(const unsigned char *)envoi,8);
 				}
 				else {
 					PA_16cErase(1);
@@ -2835,9 +2835,9 @@ bool initChoixReglesWifi(bool envoyerRegles) {
 					}
 					majRegles(reglePerso);
 					if (envoyerRegles) {
-						char envoi[8];
+						char envoi[10];
 						sprintf(envoi,"%01d%01d%01d%01d%01d%01d%01d%01d",reglePerso[0],reglePerso[1],reglePerso[2],reglePerso[3],reglePerso[4],reglePerso[5],reglePerso[6],reglePerso[7]);
-						envoiWifi(false,0x0010,envoi,8);
+						envoiWifi(false,0x0010,(const unsigned char *)envoi,8);
 					}
 				}
 				majListeReglesWifi();
@@ -2871,7 +2871,7 @@ void initElements() {
 				// Choix aléatoire de l'élément pour cette case...
 				elementPlateau[j+1][i+1] = PA_RandMax(7)+1;
 				//elementPlateau[i+1][j+1] = 3*i+j;
-				element_gfx[3*i+j] = PA_3DCreateTex(element_Texture[elementPlateau[j+1][i+1]],16,16,TEX_256COL);
+				element_gfx[3*i+j] = PA_3DCreateTex((void *)element_Texture[elementPlateau[j+1][i+1]],16,16,TEX_256COL);
 				bonus_gfx[3*i+j] = PA_3DCreateTex((void*)bonusCarte_Texture,32,32,TEX_4COL);
 				PA_3DCreateSpriteFromTex(12+3*i+j,element_gfx[3*i+j],16,16,12,78+50*j,39+50*i);
 				PA_3DSetSpritePrio(12+3*i+j,524+3*i+j);
@@ -2888,7 +2888,7 @@ void initElements() {
 	if (wifiOn == 1) {
 		char elementEnvoi[10];
 		sprintf(elementEnvoi,"%01d%01d%01d%01d%01d%01d%01d%01d%01d",elementPlateau[1][1],elementPlateau[2][1],elementPlateau[3][1],elementPlateau[1][2],elementPlateau[2][2],elementPlateau[3][2],elementPlateau[1][3],elementPlateau[2][3],elementPlateau[3][3]);
-		envoiWifi(true,0x0010,elementEnvoi,9);
+		envoiWifi(true,0x0010,(const unsigned char *)elementEnvoi,9);
 	}
 }
 
@@ -4091,7 +4091,7 @@ int initTest(int zoneXCarte,int zoneYCarte,int adversaire,int plateauTemp[5][5],
 							}
 						}
 						
-						/*maxTemp = initTest(k,j,adversaire,plateauTemp2,plateauJoueurTemp2,bonusCaseTemp2)-initTestAdversaire(false,adversaire,1-joueur,plateauTemp2,plateauJoueurTemp2,bonusCaseTemp2,carteJoueeTemp2,rang-1,tour+1);	// On teste cette carte sur cette case !
+						maxTemp = initTest(k,j,adversaire,plateauTemp2,plateauJoueurTemp2,bonusCaseTemp2)-initTestAdversaire(false,adversaire,1-joueur,plateauTemp2,plateauJoueurTemp2,bonusCaseTemp2,carteJoueeTemp2,rang-1,tour+1);	// On teste cette carte sur cette case !
 						if (maxTemp > max) {							// Si on a les meilleurs résultats
 							max = maxTemp;								// On le stock
 							carte = i;									// On définie la carte...
@@ -4215,7 +4215,7 @@ int initTourJoueur() {
 			positionCurseurY2 = i;
 				
 			if (wifiOn) {
-				envoiWifi(false,0x0006,"",positionCurseurY2+10);
+				envoiWifi(false,0x0006,(const unsigned char *)"",positionCurseurY2+10);
 			}
 			
 			break;
@@ -4301,7 +4301,7 @@ int initTourJoueur() {
 					idCarte[positionCurseurX+1][positionCurseurY+1] = carteSelection+5;
 					PA_3DSetSpriteY(10,256);
 					if (wifiOn) {
-						envoiWifi(false,0x0004,"",carteSelection*10+(3*positionCurseurY+positionCurseurX));
+						envoiWifi(false,0x0004,(const unsigned char *)"",carteSelection*10+(3*positionCurseurY+positionCurseurX));
 					}
 					deplacementCarte(carteSelection+5,positionCurseurX,positionCurseurY);
 					return 3*positionCurseurY+positionCurseurX;
@@ -4337,7 +4337,7 @@ int initTourJoueur() {
 						idCarte[positionCurseurX+1][positionCurseurY+1] = carteSelection+5;
 						PA_3DSetSpriteY(10,256);
 						if (wifiOn) {
-							envoiWifi(false,0x0004,"",carteSelection*10+(3*positionCurseurY+positionCurseurX));
+							envoiWifi(false,0x0004,(const unsigned char *)"",carteSelection*10+(3*positionCurseurY+positionCurseurX));
 						}
 						deplacementCarte(carteSelection+5,positionCurseurX,positionCurseurY);
 						return 3*positionCurseurY+positionCurseurX;
@@ -4370,7 +4370,7 @@ int initTourJoueur() {
 				while (carteJouee[1][positionCurseurY2]);
 				
 				if (wifiOn) {
-					envoiWifi(false,0x0006,"",positionCurseurY2+10);
+					envoiWifi(false,0x0006,(const unsigned char *)"",positionCurseurY2+10);
 				}
 				
 				PA_3DSetSpriteY(10,40+25*positionCurseurY2);
@@ -4403,7 +4403,7 @@ int initTourJoueur() {
 					while (carteJouee[1][positionCurseurY2]);
 					
 					if (wifiOn) {
-						envoiWifi(false,0x0006,"",positionCurseurY2+10);
+						envoiWifi(false,0x0006,(const unsigned char *)"",positionCurseurY2+10);
 					}
 					
 					PA_3DSetSpriteY(10,40+25*positionCurseurY2);
@@ -4440,7 +4440,7 @@ int initTourJoueur() {
 								positionCurseurY2 = i;
 								
 								if (wifiOn) {
-									envoiWifi(false,0x0006,"",positionCurseurY2+10);
+									envoiWifi(false,0x0006,(const unsigned char *)"",positionCurseurY2+10);
 								}
 								
 								PA_3DSetSpriteY(10,40+25*positionCurseurY2);
@@ -4461,7 +4461,7 @@ int initTourJoueur() {
 								positionCurseurY2 = i-1;
 								
 								if (wifiOn) {
-									envoiWifi(false,0x0006,"",positionCurseurY2+10);
+									envoiWifi(false,0x0006,(const unsigned char *)"",positionCurseurY2+10);
 								}
 								
 								PA_3DSetSpriteY(10,40+25*positionCurseurY2);
@@ -4482,7 +4482,7 @@ int initTourJoueur() {
 								positionCurseurY2 = !carteJouee[1][i] ? i : i-1;
 								
 								if (wifiOn) {
-									envoiWifi(false,0x0006,"",positionCurseurY2+10);
+									envoiWifi(false,0x0006,(const unsigned char *)"",positionCurseurY2+10);
 								}
 								
 								PA_3DSetSpriteY(10,40+25*positionCurseurY2);
@@ -4584,7 +4584,7 @@ int initTourAdversaireWifi() {
 	return zoneWifi;
 }
 
-void initAppliquerRegles(int * reglesActuelles,bool zonePlateau[9]) {
+void initAppliquerRegles(const int * reglesActuelles,bool zonePlateau[9]) {
 
 	bool regleIdentique = reglesActuelles[3];
 	bool reglePlus = reglesActuelles[4];
@@ -4828,7 +4828,7 @@ void afficherCartes(int type) {
 
 	int i,j;
 	int numero;
-	int yInit[5],yActuel[5],yFinal[5];
+	int yInit[5] __attribute__((unused)),yActuel[5],yFinal[5];
 	int vitesse[5];
 	bool cartePlacee[5];
 	int frame = 4*framesEntreDeuxCartes;
@@ -4965,7 +4965,7 @@ void initMainAleatoire(int joueur) {
 		if (wifiOn) {
 			char envoi[24];
 			sprintf(envoi,"%d %d %d %d %d ",mainJoueur1[1][0],mainJoueur1[1][1],mainJoueur1[1][2],mainJoueur1[1][3],mainJoueur1[1][4]);
-			envoiWifi(true,0x0007,envoi,24);
+			envoiWifi(true,0x0007,(const unsigned char *)envoi,24);
 		}
 	}
 	else {	// Sinon, c'est un adversaire
@@ -5075,7 +5075,7 @@ void initChoixCarte() {
 	int couleur;
 	
 	int nombreCartes = getNombreCarte(0,1,10);
-	int carteDispoInit[111][2];
+	int carteDispoInit[111][2] __attribute__((unused));
 	int carteDispo[111][2];
 	int nombrePage = (nombreCartes-1)/11;
 	
@@ -5204,7 +5204,7 @@ void initChoixCarte() {
 					char envoi[6];
 					sprintf(envoi,"%d ",carteDispo[positionCurseur+11*page][0]);
 #if 0
-					envoiWifi(false,0x0007,envoi,3);
+					envoiWifi(false,0x0007,(const unsigned char *)envoi,3);
 					IPC_WaitForAllSent();
 #endif
 				}
@@ -5225,7 +5225,7 @@ void initChoixCarte() {
 			AS_SoundDefaultPlay((void*)annuler,8596,127,64,0,0);
 #if 0
 			if (wifiOn) {		// Si on est en multijoueur
-				envoiWifi(false,0x0007,"",1);
+				envoiWifi(false,0x0007,(const unsigned char *)"",1);
 				IPC_WaitForAllSent();
 			}
 #endif
@@ -5280,7 +5280,7 @@ void initChoixCarte() {
 				AS_SoundDefaultPlay((void*)annuler,8596,127,64,0,0);
 #if 0
 				if (wifiOn) {		// Si on est en multijoueur
-					envoiWifi(false,0x0007,"",1);
+					envoiWifi(false,0x0007,(const unsigned char *)"",1);
 					IPC_WaitForAllSent();
 				}
 #endif
@@ -5301,7 +5301,7 @@ void initChoixCarte() {
 					if (wifiOn) {		// Si on est en multijoueur
 						char envoi[6];
 						sprintf(envoi,"%d ",carteDispo[positionCurseur+11*page][0]);
-						envoiWifi(false,0x0007,envoi,3);
+						envoiWifi(false,0x0007,(const unsigned char *)envoi,3);
 						IPC_WaitForAllSent();
 					}
 #endif
@@ -5788,7 +5788,7 @@ void initPartieWifi(bool leader) {
 		
 	if (leader) {
 		tourWifi = PA_RandMax(1);
-		envoiWifi(true,0x0004,"",101-tourWifi);
+		envoiWifi(true,0x0004,(const unsigned char *)"",101-tourWifi);
 	}
 	
 	attenteWifi();
@@ -6081,7 +6081,7 @@ void initJeuWifi(bool leader,int * reglePartieWifi) {
 			while (choixFinWifi > 0) {
 				choixFinWifi = initChoixFinWifi();
 				PA_16cErase(0);
-				envoiWifi(true,0x0006,"",choixFinWifi);
+				envoiWifi(true,0x0006,(const unsigned char *)"",choixFinWifi);
 				
 				if (choixFinWifi == 1) {
 					// On efface le perso adverse...
@@ -6113,7 +6113,7 @@ void initJeuWifi(bool leader,int * reglePartieWifi) {
 					attenteWifi();
 					
 					if (!initAttenteChoixPersoWifi()) {
-						envoiWifi(true,0x0003,"",555);
+						envoiWifi(true,0x0003,(const unsigned char *)"",555);
 						fadeBlack(1,true,true,false,0);
 						return;
 					}
@@ -6167,7 +6167,7 @@ void initJeuWifi(bool leader,int * reglePartieWifi) {
 					afficherStatus(1,message[lang][34]);
 					
 					if (!initAttenteChoixPersoWifi()) {
-						envoiWifi(true,0x0003,"",555);
+						envoiWifi(true,0x0003,(const unsigned char *)"",555);
 						fadeBlack(1,true,true,false,0);
 						return;
 					}
@@ -6287,7 +6287,7 @@ bool initWifiCreer(u16 fenetre_gfx) {
 						if (afficherFenetre3D(1,message[lang][43])) {
 							PA_3DSetSpriteY(10,256);
 							
-							envoiWifi(true,0x0003,"",21);
+							envoiWifi(true,0x0003,(const unsigned char *)"",21);
 							PA_WaitForVBL();PA_WaitForVBL();PA_WaitForVBL();
 							wifiOn = 1;
 							persoAdvWifi=-1;
@@ -6311,7 +6311,7 @@ bool initWifiCreer(u16 fenetre_gfx) {
 								break;
 							}
 							else {
-								envoiWifi(true,0x0003,"",0);
+								envoiWifi(true,0x0003,(const unsigned char *)"",0);
 								retour = 2;
 								break;
 							}
@@ -6322,7 +6322,7 @@ bool initWifiCreer(u16 fenetre_gfx) {
 					else if (Pad.Newpress.B) {
 						AS_SoundDefaultPlay((void*)annuler,8596,127,64,0,0);
 						if (afficherFenetre3D(1,message[lang][45])) {
-							envoiWifi(true,0x0003,"",20);
+							envoiWifi(true,0x0003,(const unsigned char *)"",20);
 							PA_WaitForVBL();PA_WaitForVBL();PA_WaitForVBL();
 							PA_16cClearZone(0,36,24,132,72);
 							
@@ -6387,6 +6387,7 @@ bool initWifiCreer(u16 fenetre_gfx) {
 	
 	return returnVal;
 #endif
+    return 0;
 }
 
 bool initWifiRejoindre(u16 fenetre_gfx) {
@@ -6701,7 +6702,6 @@ void initGameOver() {
 void initCredits() {
 	
 	int i;
-	char nomFichier[16];
 	
 	PA_16cTextAlign(ALIGN_CENTER);
 	PA_LoadPal16(PAL_SPRITE1,0,texteCredit_Pal);
