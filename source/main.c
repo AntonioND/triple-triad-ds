@@ -957,7 +957,8 @@ void playMusic(const char* nom) {
 	fread(musique_buffer, 1, fileSize, file);
 	fclose(file);
 	
-	AS_MP3DirectPlay(musique_buffer,fileSize);
+	//TODO: MP3
+	//AS_MP3DirectPlay(musique_buffer,fileSize);
 	
 	free(musique_buffer);
 	
