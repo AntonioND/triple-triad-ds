@@ -425,15 +425,18 @@ s16 brille_gfx;
 
 size_t EFS_GetFileSize(FILE *file)
 {
-    long old_cursor = ftell(file);
+	if (file == NULL)
+		return 0;
 
-    fseek(file, 0, SEEK_END);
+	long old_cursor = ftell(file);
 
-    long size = ftell(file);
+	fseek(file, 0, SEEK_END);
 
-    fseek(file, old_cursor, SEEK_SET);
+	long size = ftell(file);
 
-    return size;
+	fseek(file, old_cursor, SEEK_SET);
+
+	return size;
 }
 
 bool cartePriseExiste() {
@@ -495,7 +498,9 @@ bool sauvegarder() {
 	if (sauvegarde) {
  		FILE* fichier = NULL;
  
-		fichier = fopen("fat:/TripleTriad.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		chdir(fatGetDefaultDrive());
+		fichier = fopen("/TripleTriad.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		chdir("nitro:/");
  
 		//Si l'ouverture a fonctionnée
 		if (fichier != NULL) {
@@ -591,7 +596,9 @@ void nouvelleSauv() {
 
 bool charger() {	
 	FILE *fichier = NULL;
-	fichier = fopen("fat:/TripleTriad.sav", "rb"); //On ouvre le fichier
+	chdir(fatGetDefaultDrive());
+	fichier = fopen("/TripleTriad.sav", "rb"); //On ouvre le fichier
+	chdir("nitro:/");
 
 	//Si l'ouverture a fonctionnée
 	if (fichier != NULL)
@@ -637,7 +644,9 @@ bool sauvegarderBitmap(int sauv) {
 	if (sauvegarde) {
  		FILE* fichier = NULL;
 		
-		fichier = fopen("fat:/BitmapWifi.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		chdir(fatGetDefaultDrive());
+		fichier = fopen("/BitmapWifi.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		chdir("nitro:/");
 		
 		//Si l'ouverture a fonctionnée
 		if (fichier != NULL) {
@@ -712,7 +721,10 @@ bool sauvegarderBitmap(int sauv) {
 
 bool chargerBitmap() {
 	FILE *fichier = NULL;
-	fichier = fopen("fat:/BitmapWifi.sav", "rb"); //On ouvre le fichier
+
+	chdir(fatGetDefaultDrive());
+	fichier = fopen("/BitmapWifi.sav", "rb"); //On ouvre le fichier
+	chdir("nitro:/");
 
 	//Si l'ouverture a fonctionnée
 	if (fichier != NULL)
@@ -8017,11 +8029,15 @@ int main(int argc, char ** argv) {
 
 		afficherFenetre(0,"FAT init error. Save data won't be created.");
 	} else {
+		// Try to load save game
 		if (!charger()) {
-			sauvegarde = false;
+			// If it doesn't exist, create it
 			nouvelleSauv();
-
-			afficherFenetre(0,message[lang][65]);
+			if (!sauvegarder()){
+				// If it can't be created, give up
+				sauvegarde = false;
+				afficherFenetre(0,message[lang][65]);
+			}
 		}
 	}
 
