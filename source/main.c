@@ -368,7 +368,7 @@ bool effacementPersoWifi=false;
 bool affichagePersoWifi=false;
 int afficherNomWifiId=0;
 int idUserWifi=0;
-unsigned char bitmap[48][96];
+unsigned char bitmap[48][96]; // Signature in WiFi mode
 unsigned char bitmapWifi[10][48][96];
 
 int distanceArretCarte=0;
@@ -645,7 +645,7 @@ bool sauvegarderBitmap(int sauv) {
  		FILE* fichier = NULL;
 		
 		chdir(fatGetDefaultDrive());
-		fichier = fopen("/BitmapWifi.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
+		fichier = fopen("/TripleTriadBitmapWifi.sav", "wb"); // On ouvre le fichier : Attention, le fichier ne doit pas être à 0 sinon ca plante! Faire un fichier de 100 kilo pour être tranquile ^^
 		chdir("nitro:/");
 		
 		//Si l'ouverture a fonctionnée
@@ -723,7 +723,7 @@ bool chargerBitmap() {
 	FILE *fichier = NULL;
 
 	chdir(fatGetDefaultDrive());
-	fichier = fopen("/BitmapWifi.sav", "rb"); //On ouvre le fichier
+	fichier = fopen("/TripleTriadBitmapWifi.sav", "rb"); //On ouvre le fichier
 	chdir("nitro:/");
 
 	//Si l'ouverture a fonctionnée
