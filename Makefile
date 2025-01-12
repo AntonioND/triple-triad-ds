@@ -15,7 +15,7 @@ NAME		:= tripletriad
 
 GAME_TITLE	:= Triple Triad
 GAME_SUBTITLE	:= Final Fantasy VIII
-GAME_AUTHOR	:=
+GAME_AUTHOR	:= v20250112
 GAME_ICON	:= logo.bmp
 
 ARM7ELF		:= $(BLOCKSDSEXT)/palib/sys/arm7_mp3.elf
