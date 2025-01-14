@@ -96,11 +96,15 @@ select it!
 
 1. Install [BlocksDS](https://blocksds.skylyrac.net/docs/).
 
-2. Install [PAlib](https://github.com/AntonioND/palib) from source.
+2. Install [PAlib](https://github.com/AntonioND/palib):
 
-3. Run the following command in the root of this repository:
-
+   ```bash
+   wf-pacman -Sy blocksds-palib
    ```
+
+3. Clone this repository and run the following command in the root:
+
+   ```bash
    make -j`nproc`
    ```
 
